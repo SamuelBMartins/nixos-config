@@ -5,17 +5,18 @@
     experimental-features = [ "nix-command" "flakes" ];
   };
   
-  inputs = 
-    let
-      version = "23.05";
-    in
-    {
+  let
+    version = "23.05";
+  in
+  {
+    inputs = {
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-${version}";
       home-manager = {
         url = "github:nix-community/home-manager/release-${version}";
         inputs.nixpkgs.follows = "nixpkgs";
       };
     };
+  };
   
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
