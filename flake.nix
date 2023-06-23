@@ -1,6 +1,10 @@
 {
   description = "Smarty's NixOS Flake";
 
+  nixConfig = {
+    experimental-features = [ "nix-command" "flakes" ];
+  };
+  
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     home-manager = {
