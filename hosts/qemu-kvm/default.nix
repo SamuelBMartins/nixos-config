@@ -3,7 +3,7 @@
 {
   imports =
     [ 
-      # home-manager.nixosModules.home-manager
+      home-manager.nixosModules.home-manager
       ./hardware-configuration.nix
       ../../hardware/efi.nix
       # ../../core
