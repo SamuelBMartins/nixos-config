@@ -1,2 +1,2 @@
 #!/bin/sh
-ln -s flakes.nix /mnt/etc/nixos/flakes.nix
+ln -s . /mnt/etc/nixos
