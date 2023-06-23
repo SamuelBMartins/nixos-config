@@ -1,6 +1,3 @@
-let
-    version = "23.05";
-in
 {
   description = "Smarty's NixOS Flake";
 
@@ -8,13 +5,17 @@ in
     experimental-features = [ "nix-command" "flakes" ];
   };
   
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-${version}";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-${version}";
-      inputs.nixpkgs.follows = "nixpkgs";
+  inputs = 
+    let
+      version = "23.05";
+    in
+    {
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-${version}";
+      home-manager = {
+        url = "github:nix-community/home-manager/release-${version}";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
     };
-  };
   
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
