@@ -1,2 +1,3 @@
 #!/bin/sh
-ln -s . /mnt/etc/nixos
+mv /etc/nixos /etc/nixos-old
+ln -s $(pwd) /etc/nixos
