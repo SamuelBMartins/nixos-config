@@ -11,8 +11,6 @@
   };
   
   home.packages = with pkgs; [
-    neofetch
-    tree
   ];
  
   home.stateVersion = "23.05";
