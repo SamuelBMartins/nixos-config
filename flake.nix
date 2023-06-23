@@ -15,7 +15,7 @@
   
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
-    a = systemConfig: nixpkgs.lib.nixosSystem {
+    system = systemConfig: nixpkgs.lib.nixosSystem {
         system = systemConfig.system;
 
         modules = [
@@ -37,7 +37,7 @@
   in
   {
     nixosConfigurations = {
-      "qemu-kvm" = a {
+      "qemu-kvm" = system {
         system = "x86_64-linux";
         modules = [
           ./hosts/qemu-kvm
