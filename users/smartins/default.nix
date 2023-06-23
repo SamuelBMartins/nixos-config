@@ -4,11 +4,10 @@
   home.username = "smartins";
   home.homeDirectory = "/home/smartins";
 
-  # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "Ryan Yin";
-    userEmail = "xiaoyin_c@qq.com";
+    userName = "Samuel Martins";
+    userEmail = "s@smartins.ch";
   };
   
   home.packages = with pkgs; [
