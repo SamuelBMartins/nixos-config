@@ -46,9 +46,7 @@
         ];
 
         username = "smartins";
-        userModules = [
-          
-        ];
+        
       };
     };
   };
