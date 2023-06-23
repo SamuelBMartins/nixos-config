@@ -14,14 +14,41 @@
   };
   
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations = {
-      "qemu-kvm" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+    let
+      system = systemConfig: nixpkgs.lib.nixosSystem {
+          system = systemConfig.system;
 
-        modules = [
-          ./hosts/qemu-kvm
-        ];
+          modules = [
+            (./. + "/users/${systemConfig.username}")
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users."${username}" = {
+                imports = [ 
+                  (./. + "/users/${userName}/home.nix") 
+                ] ++ systemConfig.userModules;
+              };
+            }
+          ] ++ systemConfig.modules;
+        };
+    in
+    {
+      nixosConfigurations = {
+        "qemu-kvm" = system {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/qemu-kvm
+          ];
+
+          username = "smartins";
+          userModules = [
+            
+          ];
+        }
       };
-    };
+    }
   };
 }
