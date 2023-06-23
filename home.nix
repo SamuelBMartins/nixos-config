@@ -11,7 +11,7 @@
     userEmail = "xiaoyin_c@qq.com";
   };
   
-  home.packages = [
+  home.packages = with pkgs; [
     neofetch
   ];
  
