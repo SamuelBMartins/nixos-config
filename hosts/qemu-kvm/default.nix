@@ -3,10 +3,10 @@
 {
   imports =
     [ 
-      home-manager.nixosModules.home-manager
+      # home-manager.nixosModules.home-manager
       ./hardware-configuration.nix
       ../../hardware/efi.nix
-      ../../core
+      # ../../core
     ];
 
   networking.hostName = "qemu-kvm";
