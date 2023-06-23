@@ -1,3 +1,10 @@
+## Update
+
+```bash
+nix flake update
+sudo nixos-rebuild switch
+```
+
 ## BTRFS with luks encryption
 
 ```bash
