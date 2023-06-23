@@ -3,8 +3,10 @@
 {
   imports =
     [ 
+      home-manager.nixosModules.home-manager
       ./hardware-configuration.nix
       ../../hardware/efi.nix
+      # ../../core
     ];
 
   networking.hostName = "qemu-kvm";
@@ -13,14 +15,8 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
   };
-  
-  home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
 
-            home-manager.users.ryan = import ./home.nix;
-          }
+  home-manager.users.smartins = import ../../users/smartins;
 
   nixpkgs.config.allowUnfree = true;
    environment.systemPackages = with pkgs; [
