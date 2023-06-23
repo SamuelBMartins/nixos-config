@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, home-manager, ... }:
 
 {
   imports =
@@ -12,11 +12,15 @@
   users.users.smartins = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    packages = with pkgs; [
-      firefox
-      tree
-    ];
   };
+  
+  home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.ryan = import ./home.nix;
+          }
 
   nixpkgs.config.allowUnfree = true;
    environment.systemPackages = with pkgs; [

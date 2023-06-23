@@ -20,14 +20,6 @@
 
         modules = [
           ./hosts/qemu-kvm
-          
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.ryan = import ./home.nix;
-          }
         ];
       };
     };

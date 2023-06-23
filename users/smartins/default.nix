@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "ryan";
-  home.homeDirectory = "/home/ryan";
+  home.username = "smartins";
+  home.homeDirectory = "/home/smartins";
 
   # basic configuration of git, please change to your own
   programs.git = {
@@ -13,9 +13,10 @@
   
   home.packages = with pkgs; [
     neofetch
+    tree
   ];
  
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
 
   programs.home-manager.enable = true;
 }
