@@ -41,6 +41,8 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/qemu-kvm
+          ./modules/core.nix
+          ./modules/qemu-guest.nix
         ];
 
         username = "smartins";
