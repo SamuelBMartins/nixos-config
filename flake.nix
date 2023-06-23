@@ -13,42 +13,41 @@
     };
   };
   
-  outputs = { self, nixpkgs, ... }@inputs: {
-    let
-      system = systemConfig: nixpkgs.lib.nixosSystem {
-          system = systemConfig.system;
+  outputs = inputs@{ self, nixpkgs, ... }:
+  let
+    system = systemConfig: nixpkgs.lib.nixosSystem {
+        system = systemConfig.system;
 
-          modules = [
-            (./. + "/users/${systemConfig.username}")
+        modules = [
+          (./. + "/users/${systemConfig.username}")
 
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
 
-              home-manager.users."${username}" = {
-                imports = [ 
-                  (./. + "/users/${userName}/home.nix") 
-                ] ++ systemConfig.userModules;
-              };
-            }
-          ] ++ systemConfig.modules;
-        };
-    in
-    {
-      nixosConfigurations = {
-        "qemu-kvm" = system {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/qemu-kvm
-          ];
-
-          username = "smartins";
-          userModules = [
-            
-          ];
-        }
+            home-manager.users."${username}" = {
+              imports = [ 
+                (./. + "/users/${userName}/home.nix") 
+              ] ++ systemConfig.userModules;
+            };
+          }
+        ] ++ systemConfig.modules;
       };
-    }
-  };
+  in
+  {
+    nixosConfigurations = {
+      "qemu-kvm" = system {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/qemu-kvm
+        ];
+
+        username = "smartins";
+        userModules = [
+          
+        ];
+      }
+    };
+  }
 }
