@@ -63,6 +63,7 @@
           ./modules/graphical
           ./modules/graphical/gnome.nix
           ./modules/gaming.nix
+          ./modules/dev.nix
         ];
 
         username = "smartins";
