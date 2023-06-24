@@ -1,5 +1,7 @@
 { pkgs, ... }: {
   services.xserver.enable = true;
+  services.xserver.excludePackages = [ pkgs.xterm ];
+  
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome = {
     enable = true;
@@ -13,6 +15,13 @@
       favorite-apps=['org.gnome.Photos.desktop', 'org.gnome.Nautilus.desktop']
     '';
   };
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    epiphany
+    yelp
+  ]);
 
   # Enable sound with pipewire.
   sound.enable = true;
