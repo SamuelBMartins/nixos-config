@@ -6,9 +6,11 @@
   services.xserver.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverrides = ''
-      # Favorite apps in gnome-shell
       [org.gnome.shell]
       favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
+
+      [org.gnome.desktop.peripherals.touchpad]
+      tap-to-click=true
     '';
   };
 
