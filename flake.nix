@@ -65,6 +65,7 @@
           ./modules/gaming.nix
           ./modules/dev.nix
           ./modules/ssh.nix
+          ./modules/hardware/tpm2.nix
         ];
 
         username = "smartins";
