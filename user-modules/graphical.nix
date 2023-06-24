@@ -32,5 +32,5 @@
     };
   };
 
-  home.file.".face".source = ../imgs/icon.png
+  home.file.".face".source = ../imgs/icon.png;
 }
