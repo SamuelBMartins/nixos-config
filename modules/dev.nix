@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{ config, lib, pkgs, modulesPath, username, ... }: {
 
   virtualisation.docker = {
     enable = true;
@@ -7,5 +7,5 @@
         then "btrfs" else null;
   };
 
-  users.users.smartins.extraGroups = [ "docker" ];
+  users.users.${username}.extraGroups = [ "docker" ];
 }

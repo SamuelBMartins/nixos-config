@@ -36,6 +36,8 @@
             };
           }
         ] ++ systemConfig.modules;
+
+        specialArgs = { inherit systemConfig.username; };
       };
   in
   {
