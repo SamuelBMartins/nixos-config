@@ -7,6 +7,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
     sops-nix.url = "github:Mic92/sops-nix";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
@@ -59,12 +60,17 @@
         modules = [
           ./hosts/asus-laptop
           ./modules/core.nix
+          ./modules/graphical
           ./modules/graphical/gnome.nix
         ];
 
         username = "smartins";
         userModules = [
           ./user-modules/graphical.nix
+          ./user-modules/dev.nix
+          ./user-modules/gaming.nix
+          ./user-modules/work.nix
+          ./user-modules/media.nix
         ];
       };
     };
