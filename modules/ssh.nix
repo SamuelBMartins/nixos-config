@@ -2,8 +2,11 @@
 
   services.openssh = {
     enable = true;
-    PasswordAuthentication = false;
-    KbdInteractiveAuthentication = false;
+
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    }
   };
 
   users.users.${username}.openssh.authorizedKeys.keys = [
