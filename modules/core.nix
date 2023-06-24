@@ -29,7 +29,6 @@ in
     wget
     exa
     bat
-    neovim
     update
   ];
 }
