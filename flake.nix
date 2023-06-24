@@ -65,9 +65,7 @@
           ./modules/gaming.nix
           ./modules/dev.nix
           ./modules/ssh.nix
-          ./modules/hardware/tpm2.nix {
-            cryptDisk = "nixos";
-          } 
+          ./modules/hardware/tpm2.nix "nixos";
         ];
 
         username = "smartins";
