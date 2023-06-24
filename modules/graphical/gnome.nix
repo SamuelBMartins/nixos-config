@@ -16,7 +16,10 @@
     '';
   };
 
+  # plymouth also for password
+  boot.initrd.systemd.enable = true;
   boot.plymouth.enable = true;
+  boot.kernelParams = ["quiet"];
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
