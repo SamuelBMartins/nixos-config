@@ -7,13 +7,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, arkenfox, ... }:
   let
     system = systemConfig: nixpkgs.lib.nixosSystem {
         system = systemConfig.system;
