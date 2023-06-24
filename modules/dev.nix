@@ -6,5 +6,5 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "Monospace" ]; })
   ];
-  console.font = "Monospace"
+  console.font = "Monospace";
 }
