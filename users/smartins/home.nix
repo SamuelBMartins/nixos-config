@@ -8,6 +8,7 @@
     enable = true;
     userName = "Samuel Martins";
     userEmail = "s@smartins.ch";
+    signing.key = null;
     signing.signByDefault = true;
   };
 
