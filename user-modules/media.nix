@@ -15,15 +15,17 @@
       fbo-format = "rgba16hf";
 
       # shaders
-      glsl-shader = "${../shaders/FSRCNNX_x2_8-0-4-1_LineArt.glsl}";
+      glsl-shaders = [
+        "${../shaders/FSRCNNX_x2_8-0-4-1_LineArt.glsl}"
+        "${../shaders/SSimDownscaler.glsl}"
+        "${../shaders/KrigBilateral.glsl}"
+      ];
       scale = "ewa_lanczossharp";
 
-      glsl-shader = "${../shaders/SSimDownscaler.glsl}";
       dscale = "mitchell";
       linear-downscaling = "no";
       correct-downscaling = "yes";
 
-      glsl-shader = "${../shaders/KrigBilateral.glsl}";
       cscale = "mitchell";
 
       # Antiring
