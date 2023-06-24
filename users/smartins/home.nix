@@ -12,6 +12,10 @@
     signing.signByDefault = true;
   };
 
+  home.packages = with pkgs; [
+    oh-my-fish
+  ];
+
   programs.fish = {
     enable = true;
 
