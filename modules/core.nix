@@ -1,4 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+let
+  update = pkgs.writeShellScriptBin "update" ''
+    nix flake update && sudo nixos-rebuild switch;
+    flatpak update -y; yes | flatpak remove --unused;
+  '';
+in
+{
   documentation.nixos.enable = false;
 
   time.timeZone = "Europe/Zurich";
@@ -20,7 +27,9 @@
   environment.systemPackages = with pkgs; [
     git
     wget
+    exa
+    bat
+    neovim
+    update
   ];
-
-  programs.fish.enable = true;
 }

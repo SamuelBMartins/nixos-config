@@ -63,6 +63,7 @@
           ./modules/graphical
           ./modules/graphical/gnome.nix
           ./modules/gaming.nix
+          ./modules/media.nix
           ./modules/dev.nix
           ./modules/ssh.nix
           ./modules/hardware/tpm2.nix

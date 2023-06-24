@@ -56,6 +56,5 @@ fileSystems."/" =
 ## TODO
 
 - arkenfox
-- mpv
 - fish theme
 - gpg and ssh keys
