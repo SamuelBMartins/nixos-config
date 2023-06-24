@@ -25,4 +25,12 @@
       };
     };
   };
+
+  dconf.settings = {
+    "org/gnome/desktop/background" = {
+      picture-uri = "${../imgs/anime1.jpg}"
+    }
+  }
+
+  home.file.".face".source = ../imgs/icon.png
 }

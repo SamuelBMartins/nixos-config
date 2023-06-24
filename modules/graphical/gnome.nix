@@ -6,13 +6,9 @@
   services.xserver.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverrides = ''
-      # Change default background
-      [org.gnome.desktop.background]
-      picture-uri='file://${pkgs.nixos-artwork.wallpapers.mosaic-blue.gnomeFilePath}'
-
       # Favorite apps in gnome-shell
       [org.gnome.shell]
-      favorite-apps=['org.gnome.Console.desktop', 'org.gnome.Nautilus.desktop']
+      favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
     '';
   };
 
