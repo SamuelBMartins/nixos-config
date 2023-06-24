@@ -16,9 +16,9 @@
 
       # shaders
       glsl-shaders = [
-        "${../shaders/FSRCNNX_x2_8-0-4-1_LineArt.glsl}"
-        "${../shaders/SSimDownscaler.glsl}"
-        "${../shaders/KrigBilateral.glsl}"
+        "${../dotfiles/mpv/shaders/FSRCNNX_x2_8-0-4-1_LineArt.glsl}"
+        "${../dotfiles/mpv/shaders/SSimDownscaler.glsl}"
+        "${../dotfiles/mpv/shaders/KrigBilateral.glsl}"
       ];
       scale = "ewa_lanczossharp";
 
