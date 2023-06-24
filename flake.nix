@@ -66,7 +66,7 @@
           ./modules/dev.nix
           ./modules/ssh.nix
           (./modules/hardware/tpm2.nix {
-            cryptDisk = "nixos"
+            cryptDisk = "nixos";
           }) 
         ];
 
