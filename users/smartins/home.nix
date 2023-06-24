@@ -18,6 +18,21 @@
     plugins = [
     
     ];
+
+    shellAliases = {
+      ls = "exa";
+      cat = "bat";
+      diff = "diff --color=auto";
+      grep = "grep --color=auto";
+      ip = "ip -color=auto";
+      clip = "xclip -sel c <";
+      lg = "lazygit";
+      vim = "nvim";
+    }
+  };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
   };
  
   home.stateVersion = "23.05";
