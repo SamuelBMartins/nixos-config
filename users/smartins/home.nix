@@ -9,9 +9,6 @@
     userName = "Samuel Martins";
     userEmail = "s@smartins.ch";
   };
-  
-  home.packages = with pkgs; [
-  ];
  
   home.stateVersion = "23.05";
 
