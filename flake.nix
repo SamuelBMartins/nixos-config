@@ -20,7 +20,7 @@
         system = systemConfig.system;
 
         modules = [
-          sops-nix.nixosModules.sops
+          # sops-nix.nixosModules.sops
           (./. + "/users/${systemConfig.username}")
 
           home-manager.nixosModules.home-manager
