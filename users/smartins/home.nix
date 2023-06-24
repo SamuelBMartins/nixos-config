@@ -28,7 +28,7 @@
       clip = "xclip -sel c <";
       lg = "lazygit";
       vim = "nvim";
-    }
+    };
   };
 
   home.sessionVariables = {
