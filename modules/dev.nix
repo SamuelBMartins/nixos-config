@@ -1,11 +1,10 @@
-{ config, lib, pkgs, modulesPath, username, ... }: {
+{ username, ... }: {
 
   virtualisation.docker = {
     enable = true;
-
-    storageDriver = if fileSystems."/".fsType == "btrfs" 
-        then "btrfs" else null;
   };
 
+  virtualisation.docker.storageDriver = if fileSystems."/".fsType == "btrfs"
+    then "btrfs" else null;
   users.users.${username}.extraGroups = [ "docker" ];
 }
