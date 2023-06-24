@@ -55,7 +55,6 @@ fileSystems."/" =
 
 ## TODO
 
-- TPM2 auto luks unlock
 - arkenfox
 - mpv
 - fish theme
