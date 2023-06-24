@@ -6,7 +6,7 @@
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
-    }
+    };
   };
 
   users.users.${username}.openssh.authorizedKeys.keys = [
