@@ -4,7 +4,7 @@
   users.users.${username}.extraGroups = [ "docker" ];
 
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "Monospace" ]; })
+    (nerdfonts.override { fonts = [ "JetBrains Mono" ]; })
   ];
-  console.font = "Monospace";
+  console.font = "JetBrains Mono";
 }
