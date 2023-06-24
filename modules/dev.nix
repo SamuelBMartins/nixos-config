@@ -2,9 +2,14 @@
 
   virtualisation.docker = {
     enable = true;
+
+    (
+      if fileSystems."/".fsType == "btrfs" 
+        then storageDriver = "btrfs" 
+        else storageDriver = null;
+    )
+
   };
 
-  virtualisation.docker.storageDriver = if fileSystems."/".fsType == "btrfs"
-    then "btrfs" else null;
   users.users.${username}.extraGroups = [ "docker" ];
 }
