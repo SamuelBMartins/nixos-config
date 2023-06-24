@@ -8,20 +8,18 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
-    sops-nix.url = "github:Mic92/sops-nix";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, arkenfox, ... }:
   let
     system = systemConfig: nixpkgs.lib.nixosSystem {
         system = systemConfig.system;
 
         modules = [
-          # sops-nix.nixosModules.sops
           (./. + "/users/${systemConfig.username}")
 
           home-manager.nixosModules.home-manager
@@ -36,6 +34,8 @@
             };
           }
         ] ++ systemConfig.modules;
+
+        specialArgs = { username = systemConfig.username; };
       };
   in
   {
@@ -63,6 +63,8 @@
           ./modules/graphical
           ./modules/graphical/gnome.nix
           ./modules/gaming.nix
+          ./modules/dev.nix
+          ./modules/ssh.nix
         ];
 
         username = "smartins";

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
@@ -12,9 +12,14 @@
 
       # Favorite apps in gnome-shell
       [org.gnome.shell]
-      favorite-apps=['org.gnome.Photos.desktop', 'org.gnome.Nautilus.desktop']
+      favorite-apps=['org.gnome.Console.desktop', 'org.gnome.Nautilus.desktop']
     '';
   };
+
+  # plymouth also for password
+  boot.initrd.systemd.enable = true;
+  boot.plymouth.enable = true;
+  boot.kernelParams = ["quiet"];
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
@@ -50,7 +55,7 @@
   ];
 
   networking.networkmanager.enable = true;
-  users.users.smartins = {
+  users.users.${username} = {
     extraGroups = [ "networkmanager" ];
   };
 }
