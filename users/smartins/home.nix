@@ -57,6 +57,7 @@
       set cc=80
       set mouse=a
       set cursorline
+      set encoding=UTF-8
     '';
   };
  
