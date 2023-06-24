@@ -28,7 +28,7 @@
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri = "${../imgs/anime1.jpg}"
+      picture-uri = "${../imgs/anime1.jpg}";
     };
   };
 
