@@ -21,6 +21,4 @@
     git
     wget
   ];
-
-  programs.fish.enable = true;
 }
