@@ -2,7 +2,7 @@
 
 {
 
-  networking.firewall = {
+  config.networking.firewall = {
     allowedTCPPorts = [3000];
     allowedUDPPorts = [
       32410
