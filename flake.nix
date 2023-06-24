@@ -51,6 +51,20 @@
           
         ];
       };
+
+      "asus-laptop" = system {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/asus-laptop
+          ./modules/core.nix
+          ./modules/graphical/gnome.nix
+        ];
+
+        username = "smartins";
+        userModules = [
+          
+        ];
+      };
     };
   };
 }
