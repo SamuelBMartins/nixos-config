@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username ... }: {
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
@@ -55,7 +55,7 @@
   ];
 
   networking.networkmanager.enable = true;
-  users.users.smartins = {
+  users.users.${username} = {
     extraGroups = [ "networkmanager" ];
   };
 }
