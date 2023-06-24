@@ -75,8 +75,6 @@
     plex-media-player
     jellyfin-web
     spotify
-    plex-mpv-shim
-    jellyfin-mpv-shim
   ];
 
 

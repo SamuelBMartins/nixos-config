@@ -8,16 +8,12 @@
     enable = true;
     userName = "Samuel Martins";
     userEmail = "s@smartins.ch";
+    signing.key = ;
+    signing.signByDefault = true;
   };
 
   programs.fish = {
     enable = true;
-    # interactiveShellInit = ''
-    #   set fish_greeting # Disable greeting
-    # '';
-    plugins = [
-    
-    ];
 
     shellAliases = {
       ls = "exa";
