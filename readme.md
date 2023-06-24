@@ -52,3 +52,11 @@ fileSystems."/" =
       options = [ "subvol=nixos" "noatime ];
     };
 ```
+
+## TODO
+
+- TPM2 auto luks unlock
+- arkenfox
+- mpv
+- fish theme
+- gpg and ssh keys
