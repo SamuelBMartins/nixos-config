@@ -10,5 +10,7 @@
     ];
   };
 
-  environment.systemPackages = [ plex-mpv-shim ];
+  environment.systemPackages = with pkgs; [ 
+    plex-mpv-shim 
+  ];
 }
