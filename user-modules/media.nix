@@ -5,5 +5,8 @@
     plex-media-player
     jellyfin-web
     mpv
+    spotify
+    plex-mpv-shim
+    jellyfin-mpv-shim
   ];
 }
