@@ -60,12 +60,17 @@
         modules = [
           ./hosts/asus-laptop
           ./modules/core.nix
+          ./modules/graphical
           ./modules/graphical/gnome.nix
         ];
 
         username = "smartins";
         userModules = [
           ./user-modules/graphical.nix
+          ./user-modules/dev.nix
+          ./user-modules/gaming.nix
+          ./user-modules/work.nix
+          ./user-modules/media.nix
         ];
       };
     };
