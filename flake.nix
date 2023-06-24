@@ -37,7 +37,7 @@
           }
         ] ++ systemConfig.modules;
 
-        specialArgs = { inherit systemConfig.username; };
+        specialArgs = { username = systemConfig.username; };
       };
   in
   {
