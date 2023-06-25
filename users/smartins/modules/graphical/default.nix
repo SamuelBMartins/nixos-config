@@ -18,7 +18,9 @@ in
       picture-uri = "${../../assets/walls/anime-wallpaper1.jpg}";
     };
     "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "us+altgr-intl" ]) (mkTuple [ "xkb" "ch+fr" ]) ];
+      sources = [ 
+        (if config.console.keyMap == "fr_CH" then (mkTuple [ "xkb" "us+altgr-intl" ])) 
+        (mkTuple [ "xkb" "ch+fr" ]) ];
     };
   };
 
