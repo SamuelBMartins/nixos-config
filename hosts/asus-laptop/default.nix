@@ -5,6 +5,7 @@
     [ 
       ./hardware-configuration.nix
       ../../modules/hardware/efi.nix
+      ./nvidia-offload.nix
     ];
 
   networking.hostName = "asus-laptop";
