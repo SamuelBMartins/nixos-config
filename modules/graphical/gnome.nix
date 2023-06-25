@@ -11,6 +11,9 @@
   services.xserver.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverrides = ''
+      [org.gnome.desktop.input-sources] 
+      sources=[('xkb', 'ch+fr')]
+      
       [org.gnome.shell]
       favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
 
