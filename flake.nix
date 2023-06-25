@@ -30,12 +30,12 @@
             home-manager.users."${systemConfig.username}" = {
               imports = [ 
                 (./. + "/users/${systemConfig.username}/home.nix") 
-              ] ++ map (x: ./. + "/users/${systemConfig.username}/modules" + ./. + x) systemConfig.categories;
+              ] ++ map (x: ./. + "/users/${systemConfig.username}/modules/" + x) systemConfig.categories;
             };
           }
         ] 
         ++ systemConfig.modules
-        ++ map (x: ./. + "/modules" + ./. + x) systemConfig.categories;
+        ++ map (x: ./. + "/modules/" + x) systemConfig.categories;
 
         specialArgs = { username = systemConfig.username; };
       };
@@ -67,12 +67,12 @@
         username = "smartins";
 
         categories = [
-          "core"
-          "dev"
-          "graphical"
-          "media"
-          "gaming"
-          "work"
+          ./core
+          ./dev
+          ./graphical
+          ./media
+          ./gaming
+          ./work
         ];
 
         modules = [
