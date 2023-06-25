@@ -1,8 +1,8 @@
 { ... }: {
 
   imports = [
-    "../core.nix"
-    "../audio.nix"
+    ../core.nix
+    ../audio.nix
   ];
 
   services.flatpak.enable = true;

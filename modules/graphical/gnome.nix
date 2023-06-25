@@ -1,7 +1,7 @@
 { pkgs, username, ... }: {
 
   imports = [
-    "../graphical"
+    ../graphical
   ];
 
   services.xserver.enable = true;
