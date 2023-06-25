@@ -11,12 +11,6 @@
   networking.hostName = "asus-laptop";
 
   console.keyMap = "fr_CH";
-  services.xserver.desktopManager.gnome = { 
-    extraGSettingsOverrides = '' 
-      [org.gnome.desktop.input-sources] 
-      sources=[('xkb', 'gb')]
-    ''; 
-  };
 
   nixpkgs.config.allowUnfree = true;
   
