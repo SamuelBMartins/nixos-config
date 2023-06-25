@@ -1,7 +1,7 @@
 { config, pkgs, username, ... }: {
 
   imports = [
-    ../zsh.nix
+    ./zsh.nix
   ];
 
   virtualisation.docker.enable = true;
