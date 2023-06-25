@@ -20,7 +20,7 @@ in
     "org/gnome/desktop/input-sources" = {
       sources = [ 
         (mkTuple [ "xkb" "us+altgr-intl" ])
-        (if config.console.keyMap == "fr_CH" then (mkTuple [ "xkb" "ch+fr" ]) else {}) 
+        (if console.keyMap == "fr_CH" then (mkTuple [ "xkb" "ch+fr" ]) else {}) 
       ];
     };
   };
