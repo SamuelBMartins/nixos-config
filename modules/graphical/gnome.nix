@@ -1,7 +1,7 @@
 { pkgs, username, ... }: {
 
   imports = [
-    "./default.nix"
+    "../graphical"
   ];
 
   services.xserver.enable = true;
