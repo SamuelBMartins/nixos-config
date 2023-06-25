@@ -30,7 +30,7 @@
             home-manager.users."${systemConfig.username}" = {
               imports = [ 
                 (./. + "/users/${systemConfig.username}/home.nix") 
-              ] ++ map (x: "$./users/{systemConfig.username}/modules/" + x) systemConfig.userModules ;
+              ] ++ systemConfig.userModules ;
             };
           }
         ] ++ systemConfig.modules;
@@ -69,12 +69,12 @@
 
         username = "smartins";
         userModules = [
-          ./core
-          ./dev
-          ./gaming
-          ./work
-          ./media
-          ./graphical
+          ./users/smartins/modules/core
+          ./users/smartins/modules/dev
+          ./users/smartins/modules/gaming
+          ./users/smartins/modules/work
+          ./users/smartins/modules/media
+          ./users/smartins/modules/graphical
         ];
       };
     };
