@@ -55,6 +55,7 @@
         modules = [
           ./hosts/qemu-kvm
           ./modules/graphical/gnome.nix
+          ./modules/qemu-guest.nix
         ];
       };
 
