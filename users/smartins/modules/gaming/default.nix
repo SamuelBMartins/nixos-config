@@ -6,5 +6,7 @@
     bottles
     heroic
     minecraft
+    desmume
+    ryujinx
   ];
 }

@@ -9,5 +9,7 @@
     plex-media-player
     jellyfin-web
     spotify
+    freetube
+    celluloid
   ];
 }

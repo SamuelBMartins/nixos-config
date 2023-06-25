@@ -30,5 +30,6 @@ in
     exa
     bat
     update
+    htop
   ];
 }
