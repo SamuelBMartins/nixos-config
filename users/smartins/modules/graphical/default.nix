@@ -1,5 +1,8 @@
 { config, lib, pkgs, ... }:
 
+let
+  mkTuple = lib.hm.gvariant.mkTuple;
+in
 {
 
   imports = [ 
@@ -15,7 +18,7 @@
       picture-uri = "${../../assets/walls/anime-wallpaper1.jpg}";
     };
     "org/gnome/desktop/input-sources" = {
-      sources = [ (lib.mkTuple [ "xkb" "us+altgr-intl" ]) (lib.mkTuple [ "xkb" "ch+fr" ]) ];
+      sources = [ (mkTuple [ "xkb" "us+altgr-intl" ]) (mkTuple [ "xkb" "ch+fr" ]) ];
     };
   };
 
