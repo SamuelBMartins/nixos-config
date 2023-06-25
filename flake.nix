@@ -30,7 +30,7 @@
             home-manager.users."${systemConfig.username}" = {
               imports = [ 
                 (./. + "/users/${systemConfig.username}/home.nix") 
-              ] ++ map (x: ./. + ()"/users/${systemConfig.username}/modules/" + x)) systemConfig.categories;
+              ] ++ map (x: ./. + ("/users/${systemConfig.username}/modules/" + x)) systemConfig.categories;
             };
           }
         ] 
