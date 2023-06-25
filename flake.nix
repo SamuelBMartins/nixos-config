@@ -69,12 +69,12 @@
 
         username = "smartins";
         userModules = [
-          ./users/smartins/modules/core
-          ./users/smartins/modules/dev
-          ./users/smartins/modules/gaming
-          ./users/smartins/modules/work
-          ./users/smartins/modules/media
-          ./users/smartins/modules/graphical
+          # ./users/smartins/modules/core
+          # ./users/smartins/modules/dev
+          # ./users/smartins/modules/gaming
+          # ./users/smartins/modules/work
+          # ./users/smartins/modules/media
+          # ./users/smartins/modules/graphical
         ];
       };
     };
