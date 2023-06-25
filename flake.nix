@@ -30,10 +30,12 @@
             home-manager.users."${systemConfig.username}" = {
               imports = [ 
                 (./. + "/users/${systemConfig.username}/home.nix") 
-              ] ++ systemConfig.userModules ;
+              ] ++ map (x: "./users/${systemConfig.username}/modules/" + x) systemConfig.categories;
             };
           }
-        ] ++ systemConfig.modules;
+        ] 
+        ++ systemConfig.modules
+        ++ map (x: "./modules/" + x) systemConfig.categories;;
 
         specialArgs = { username = systemConfig.username; };
       };
@@ -42,6 +44,11 @@
     nixosConfigurations = {
       "qemu-kvm" = system {
         system = "x86_64-linux";
+
+        categories = [
+
+        ];
+
         modules = [
           ./hosts/qemu-kvm
           ./modules/core.nix
@@ -57,24 +64,22 @@
 
       "asus-laptop" = system {
         system = "x86_64-linux";
+        username = "smartins";
+
+        categories = [
+          core
+          dev
+          graphical
+          media
+          gaming
+          work
+        ];
+
         modules = [
           ./hosts/asus-laptop
           ./modules/hardware/tpm2.nix
           ./modules/graphical/gnome.nix
-          ./modules/gaming.nix
-          ./modules/media.nix
-          ./modules/dev.nix
           ./modules/ssh.nix
-        ];
-
-        username = "smartins";
-        userModules = [
-          ./users/smartins/modules/core
-          ./users/smartins/modules/dev
-          ./users/smartins/modules/gaming
-          ./users/smartins/modules/work
-          ./users/smartins/modules/media
-          ./users/smartins/modules/graphical
         ];
       };
     };
