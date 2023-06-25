@@ -64,7 +64,7 @@
         username = "smartins";
 
         categories = [
-          # "core"
+          "core"
           # "dev"
           # "graphical"
           # "media"
