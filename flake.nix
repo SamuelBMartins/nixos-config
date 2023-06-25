@@ -67,12 +67,12 @@
         username = "smartins";
 
         categories = [
-          core
-          dev
-          graphical
-          media
-          gaming
-          work
+          "core"
+          "dev"
+          "graphical"
+          "media"
+          "gaming"
+          "work"
         ];
 
         modules = [
