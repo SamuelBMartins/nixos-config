@@ -14,7 +14,7 @@
   services.xserver.desktopManager.gnome = { 
     extraGSettingsOverrides = '' 
       [org.gnome.desktop.input-sources] 
-      sources=[('xkb', 'fr_CH')]
+      sources=[('xkb', 'ch+fr')]
     ''; 
   };
 
