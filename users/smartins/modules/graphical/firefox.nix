@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    bitwarden
-  ];
-
   programs.firefox = {
     enable = true;
     # arkenfox = {
@@ -25,12 +21,4 @@
     #   };
     # };
   };
-
-  dconf.settings = {
-    "org/gnome/desktop/background" = {
-      picture-uri = "${../imgs/anime1.jpg}";
-    };
-  };
-
-  home.file.".face".source = ../imgs/icon.png;
 }
