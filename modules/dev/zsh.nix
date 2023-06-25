@@ -5,7 +5,6 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
-  console.font = "JetBrainsMono";
 
   programs.zsh = {
     enable = true;

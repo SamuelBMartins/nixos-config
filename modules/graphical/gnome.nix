@@ -17,6 +17,9 @@
       [org.gnome.desktop.peripherals.touchpad]
       tap-to-click=true
     '';
+    extraGSettingsOverridePackages = [ 
+      pkgs.gsettings-desktop-schemas 
+    ]; 
   };
 
   # plymouth also for password

@@ -10,11 +10,6 @@
 
   networking.hostName = "asus-laptop";
 
-  services.xserver = {
-    layout = "ch";
-    xkbVariant = "fr";
-  };
-
   console.keyMap = "fr_CH";
 
   nixpkgs.config.allowUnfree = true;

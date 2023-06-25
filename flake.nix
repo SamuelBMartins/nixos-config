@@ -44,19 +44,19 @@
     nixosConfigurations = {
       "qemu-kvm" = system {
         system = "x86_64-linux";
+        username = "smartins";
 
         categories = [
-
+          "core"
+          "dev"
+          "graphical"
         ];
 
         modules = [
           ./hosts/qemu-kvm
-          ./modules/core.nix
-          ./modules/qemu-guest.nix
           ./modules/graphical/gnome.nix
+          ./modules/qemu-guest.nix
         ];
-
-        username = "smartins";
       };
 
       "asus-laptop" = system {
