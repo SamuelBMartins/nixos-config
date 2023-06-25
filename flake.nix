@@ -33,9 +33,7 @@
               ] ++ map (x: ./. + "/users/${systemConfig.username}/modules/" + x) systemConfig.categories;
             };
           }
-        ] 
-        ++ systemConfig.modules
-        ++ map (x: ./. + "/modules/" + x) systemConfig.categories;
+        ] ++ map (x: ./. + "/modules/" + x) systemConfig.categories;
 
         specialArgs = { username = systemConfig.username; };
       };
