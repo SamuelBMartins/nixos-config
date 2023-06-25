@@ -57,9 +57,6 @@
         ];
 
         username = "smartins";
-        userModules = [
-          
-        ];
       };
 
       "asus-laptop" = system {
@@ -67,12 +64,12 @@
         username = "smartins";
 
         categories = [
-          "core"
-          "dev"
-          "graphical"
-          "media"
-          "gaming"
-          "work"
+          # "core"
+          # "dev"
+          # "graphical"
+          # "media"
+          # "gaming"
+          # "work"
         ];
 
         modules = [
