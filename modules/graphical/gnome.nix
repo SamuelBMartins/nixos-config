@@ -1,6 +1,6 @@
 { pkgs, username, ... }: {
 
-  modules = [
+  imports = [
     "./default.nix"
   ];
 
