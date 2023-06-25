@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, options, lib, pkgs, ... }:
 
 let
   mkTuple = lib.hm.gvariant.mkTuple;
@@ -20,7 +20,7 @@ in
     "org/gnome/desktop/input-sources" = {
       sources = [ 
         (mkTuple [ "xkb" "us+altgr-intl" ])
-        (if console.keyMap == "fr_CH" then (mkTuple [ "xkb" "ch+fr" ]) else {}) 
+        (if options.console.keyMap == "fr_CH" then (mkTuple [ "xkb" "ch+fr" ]) else {}) 
       ];
     };
   };
