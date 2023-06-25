@@ -15,7 +15,7 @@
       picture-uri = "${../../assets/walls/anime-wallpaper1.jpg}";
     };
     "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "us+altgr-intl" ]) (mkTuple [ "xkb" "ch+fr" ]) ];
+      sources = [ (lib.mkTuple [ "xkb" "us+altgr-intl" ]) (lib.mkTuple [ "xkb" "ch+fr" ]) ];
     };
   };
 
