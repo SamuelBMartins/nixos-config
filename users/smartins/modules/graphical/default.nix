@@ -19,8 +19,9 @@ in
     };
     "org/gnome/desktop/input-sources" = {
       sources = [ 
-        (if config.console.keyMap == "fr_CH" then (mkTuple [ "xkb" "us+altgr-intl" ])) 
-        (mkTuple [ "xkb" "ch+fr" ]) ];
+        (mkTuple [ "xkb" "us+altgr-intl" ])
+        (if config.console.keyMap == "fr_CH" then (mkTuple [ "xkb" "ch+fr" ]) else {}) 
+      ];
     };
   };
 
