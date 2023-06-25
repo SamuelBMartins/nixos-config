@@ -1,8 +1,8 @@
 { pkgs, username, ... }: {
 
-  imports = [
-    "../graphical"
-  ];
+  # imports = [
+  #   "../graphical"
+  # ];
 
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
