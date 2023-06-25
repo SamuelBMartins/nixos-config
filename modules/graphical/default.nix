@@ -1,6 +1,6 @@
 { ... }: {
 
-  modules = [
+  imports = [
     "../core.nix"
     "../audio.nix"
   ];
