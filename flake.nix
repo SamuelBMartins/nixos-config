@@ -35,7 +35,7 @@
           }
         ] 
         ++ systemConfig.modules
-        ++ map (x: x) systemConfig.categories;
+        ++ map (x: ./modules + x) systemConfig.categories;
 
         specialArgs = { username = systemConfig.username; };
       };
@@ -64,7 +64,7 @@
         username = "smartins";
 
         categories = [
-          ./core
+          "core"
           # "dev"
           # "graphical"
           # "media"
