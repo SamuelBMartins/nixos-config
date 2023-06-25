@@ -12,5 +12,8 @@
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
     jetbrains.clion
+    postman
+    apostrophe
+    neofetch
   ];
 }

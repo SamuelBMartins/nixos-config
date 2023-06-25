@@ -11,6 +11,16 @@ in
 
   home.packages = with pkgs; [
     bitwarden
+    wasabiwallet
+    ungoogled-chromium
+    filezilla
+    qbittorrent
+    element-desktop
+    gimp
+    calibre
+    synology-drive-client
+    gparted
+    libreoffice
   ];
 
   dconf.settings = {
