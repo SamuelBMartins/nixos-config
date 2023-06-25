@@ -2,7 +2,7 @@
 
 {
   imports = [ 
-    "./mpv"
+    ./mpv
   ];
 
   home.packages = with pkgs; [

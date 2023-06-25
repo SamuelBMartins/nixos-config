@@ -3,7 +3,7 @@
 {
 
   imports = [ 
-    "./firefox.nix"
+    ./firefox.nix
   ];
 
   home.packages = with pkgs; [
@@ -12,9 +12,9 @@
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri = "${../assets/walls/anime-wallpaper1.jpg}";
+      picture-uri = "${../../assets/walls/anime-wallpaper1.jpg}";
     };
   };
 
-  home.file.".face".source = ../assets/icon.png;
+  home.file.".face".source = ../../assets/icon.png;
 }

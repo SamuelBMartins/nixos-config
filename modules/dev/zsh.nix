@@ -1,14 +1,11 @@
 { config, pkgs, username, ... }: {
 
-  virtualisation.docker.enable = true;
-  users.users.${username}.extraGroups = [ "docker" ];
+  users.users.${username}.shell = pkgs.zsh;
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
   console.font = "JetBrainsMono";
-
-  users.users.${username}.shell = pkgs.zsh;
 
   programs.zsh = {
     enable = true;
