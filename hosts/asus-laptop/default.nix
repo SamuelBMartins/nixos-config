@@ -12,6 +12,11 @@
 
   console.keyMap = "fr_CH";
 
+ services.xserver = {
+    layout = "ch";
+    xkbVariant = "fr";
+  };
+  
   nixpkgs.config.allowUnfree = true;
   
   system.stateVersion = "23.05";
