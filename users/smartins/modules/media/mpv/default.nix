@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
   programs.mpv = {
     enable = true;
 
@@ -16,9 +15,9 @@
 
       # shaders
       glsl-shaders = [
-        "${../dotfiles/mpv/shaders/FSRCNNX_x2_8-0-4-1_LineArt.glsl}"
-        "${../dotfiles/mpv/shaders/SSimDownscaler.glsl}"
-        "${../dotfiles/mpv/shaders/KrigBilateral.glsl}"
+        "${./shaders/FSRCNNX_x2_8-0-4-1_LineArt.glsl}"
+        "${./shaders/SSimDownscaler.glsl}"
+        "${./shaders/KrigBilateral.glsl}"
       ];
       scale = "ewa_lanczossharp";
 
@@ -70,12 +69,4 @@
       screenshot-template = "%f-%wH.%wM.%wS.%wT-#%#00n";
     };
   };
-
-  home.packages = with pkgs; [
-    plex-media-player
-    jellyfin-web
-    spotify
-  ];
-
-
 }

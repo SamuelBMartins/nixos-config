@@ -30,7 +30,7 @@
             home-manager.users."${systemConfig.username}" = {
               imports = [ 
                 (./. + "/users/${systemConfig.username}/home.nix") 
-              ] ++ systemConfig.userModules;
+              ] ++ map (x: "$./users/{systemConfig.username}/modules/" + x) systemConfig.userModules ;
             };
           }
         ] ++ systemConfig.modules;
@@ -59,23 +59,22 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/asus-laptop
-          ./modules/core.nix
-          ./modules/graphical
+          ./modules/hardware/tpm2.nix
           ./modules/graphical/gnome.nix
           ./modules/gaming.nix
           ./modules/media.nix
           ./modules/dev.nix
           ./modules/ssh.nix
-          ./modules/hardware/tpm2.nix
         ];
 
         username = "smartins";
         userModules = [
-          ./user-modules/graphical.nix
-          ./user-modules/dev.nix
-          ./user-modules/gaming.nix
-          ./user-modules/work.nix
-          ./user-modules/media.nix
+          ./core
+          ./dev
+          ./gaming
+          ./work
+          ./media
+          ./graphical
         ];
       };
     };

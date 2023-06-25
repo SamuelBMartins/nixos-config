@@ -1,4 +1,9 @@
 { pkgs, username, ... }: {
+
+  modules = [
+    "./default.nix"
+  ];
+
   services.xserver.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
@@ -25,17 +30,6 @@
     epiphany
     yelp
   ]);
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
   
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "\${HOME}/.cache";
