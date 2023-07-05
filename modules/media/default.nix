@@ -12,5 +12,10 @@
 
   environment.systemPackages = with pkgs; [ 
     plex-mpv-shim 
+    plex-media-player
+    jellyfin-web
+    spotify
+    freetube
+    celluloid
   ];
 }

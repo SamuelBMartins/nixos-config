@@ -1,4 +1,5 @@
 { config, pkgs, ... }: 
+# Add env PASSWORD to avoid writing it
 let
   tpm2-update = pkgs.writeShellScriptBin "tpm2-update" ''
     sudo systemd-cryptenroll --wipe-slot=tpm2 ${config.boot.initrd.luks.devices."nixos".device}; 

@@ -12,7 +12,7 @@
     enable = true;
     extraGSettingsOverrides = ''
       [org.gnome.shell]
-      favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
+      favorite-apps=['librewolf.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
 
       [org.gnome.desktop.peripherals.touchpad]
       tap-to-click=true
