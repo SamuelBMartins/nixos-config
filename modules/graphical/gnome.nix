@@ -13,7 +13,7 @@
     # TODO find name package automatically
     extraGSettingsOverrides = ''
       [org.gnome.shell]
-      favorite-apps=['librewolf.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
+      favorite-apps=['librewolf.desktop', 'geary.desktop', 'calendar.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
 
       [org.gnome.desktop.peripherals.touchpad]
       tap-to-click=true
