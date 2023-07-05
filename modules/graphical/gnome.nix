@@ -10,6 +10,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome = {
     enable = true;
+    # TODO find name package automatically
     extraGSettingsOverrides = ''
       [org.gnome.shell]
       favorite-apps=['librewolf.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']

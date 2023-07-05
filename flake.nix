@@ -120,6 +120,7 @@ in
               "gb"
               "ch+fr"
             ];
+            # TODO find name package automatically
             autoStart = [
               "org.gnome.Evolution"
               "slack"
