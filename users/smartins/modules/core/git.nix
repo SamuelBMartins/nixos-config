@@ -13,6 +13,9 @@ in
     signing.signByDefault = true;
     extraConfig = {
       pull.rebase = true;
+      init = {
+        defaultBranch = "main";
+      };
     };
   };
 
