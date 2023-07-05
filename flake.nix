@@ -34,7 +34,7 @@
             
             home-manager.extraSpecialArgs = { 
               userConfig = systemConfig.user.config;
-              systemConfig = self;
+              systemConfig = self.nixosConfigurations.${systemConfig.name}.config;
             };
           }
         ] ++ systemConfig.modules;
@@ -45,6 +45,7 @@
   {
     nixosConfigurations = {
       "qemu-kvm" = system {
+        name = "qemu-kvm";
         system = "x86_64-linux";
 
         user = {
@@ -75,6 +76,7 @@
       };
 
       "asus-laptop" = system {
+        name = "asus-laptop";
         system = "x86_64-linux";
 
         user = {
@@ -114,6 +116,7 @@
       };
 
       "work" = system {
+        name = "work";
         system = "x86_64-linux";
 
         user = {
@@ -150,6 +153,7 @@
       };
 
       "desktop" = system {
+        name = "desktop";
         system = "x86_64-linux";
 
         user = {
@@ -185,6 +189,7 @@
       };
 
       "thinkpad" = system {
+        name = "thinkpad";
         system = "x86_64-linux";
 
         user = {
@@ -216,6 +221,7 @@
       };
 
       "raspberry" = system {
+        name = "raspberry";
         system = "x86_64-linux";
 
         user = {

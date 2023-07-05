@@ -1,9 +1,9 @@
-{ config, lib, pkgs, userConfig, ... }:
+{ config, lib, pkgs, userConfig, systemConfig, ... }:
 
 let
   mkTuple = lib.hm.gvariant.mkTuple;
 in
-{
+lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
   # TODO name packages auto
   dconf.settings = {
     "org/gnome/desktop/background" = {

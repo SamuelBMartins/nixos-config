@@ -1,6 +1,6 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, systemConfig, ... }:
 
-{
+lib.mkIf systemConfig.services.xserver.enable {
   programs.mpv = {
     enable = true;
 

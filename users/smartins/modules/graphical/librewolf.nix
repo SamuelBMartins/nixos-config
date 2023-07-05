@@ -1,7 +1,6 @@
 { config, pkgs, lib, options, systemConfig, ... }:
 
-{
-  a = bultins.trace  systemConfig "ciao"
+lib.mkIf systemConfig.services.xserver.enable {
   programs.librewolf = {
     enable = true;
     
