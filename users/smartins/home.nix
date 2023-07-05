@@ -1,6 +1,6 @@
 { config, pkgs, userConfig, ... }:
 let
-  autostart = userConfig.autostart ? [] 
+  autostart = userConfig.autostart ? [ ];
 in
 {
   home.username = "smartins";

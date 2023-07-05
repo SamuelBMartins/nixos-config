@@ -1,3 +1,6 @@
+let
+  version = "23.05";
+in
 {
   description = "Smarty's NixOS Flake";
 
@@ -6,9 +9,9 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-${version}";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager/release-${version}";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -112,6 +115,7 @@
 
         user = {
           name = "smartins";
+          work = true;
           config = {
             keyboardLayout = [
               "gb"
