@@ -15,6 +15,7 @@
     lazygit
     postman
     apostrophe
+    # meld
 
     # Languages
     # jdk17

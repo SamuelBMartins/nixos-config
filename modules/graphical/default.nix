@@ -21,9 +21,9 @@
     gimp
     calibre
     synology-drive-client
-    gparted
     libreoffice
     celluloid
+    # gparted
     # file-roller
     # geary
   ];

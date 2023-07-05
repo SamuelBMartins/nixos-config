@@ -22,6 +22,10 @@
     ]; 
   };
 
+  # TODO
+  # programs.gnupg.agent.enable = true;
+  # security.pam.services.gdm.enableGnomeKeyring = true;
+
   # plymouth also for password
   boot.initrd.systemd.enable = true;
   boot.plymouth.enable = true;
@@ -47,6 +51,7 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
+    # TODO extensions tweaks boxes
   ];
 
   networking.networkmanager.enable = true;

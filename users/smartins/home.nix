@@ -12,7 +12,7 @@ in
 
   imports = [ 
     ./modules/core/git.nix
-    ./modules/dev/nvim.nix
+    ./modules/common/nvim.nix
 
     lib.mkIf config.services.xserver.desktopManager.gnome.enable ./modules/graphical/gnome.nix
     lib.mkIf config.services.xserver.enable ./modules/media/mpv

@@ -37,8 +37,7 @@ in
               specialArgs = { userConfig = systemConfig.user.config };
             };
           }
-        ] 
-        ++ systemConfig.modules
+        ] ++ systemConfig.modules
 
         specialArgs = { username = systemConfig.user.name; };
       };
@@ -207,6 +206,29 @@ in
           ./modules/media
           ./modules/gaming
           ./modules/work
+        ];
+      };
+
+      "raspberry" = system {
+        system = "x86_64-linux";
+
+        user = {
+          name = "smartins";
+          config = {
+            keyboardLayout = [
+              "us+altgr-intl"
+            ];
+          }
+        }
+
+        modules = [
+          ./hosts/raspberry
+
+          # Categories
+          ./modules/core
+
+          # Services
+          ./modules/ssh.nix
         ];
       };
 

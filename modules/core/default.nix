@@ -30,5 +30,10 @@ in
     update
     wget
     htop
+    # tree
+    # unzip
+    # curl
+    # file
+    # man-pages
   ];
 }

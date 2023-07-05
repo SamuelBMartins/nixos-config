@@ -5,9 +5,12 @@
     ./zsh.nix
   ];
   
+  services.fwupd.enable = true;
+
   environment.systemPackages = with pkgs; [
     exa
     bat
     neofetch
+    xclip
   ];
 }
