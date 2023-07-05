@@ -4,14 +4,24 @@
   users.users.${username}.extraGroups = [ "docker" ];
 
   environment.systemPackages = with pkgs; [
-    lazygit
+    # IDE
     vscode
     jetbrains.webstorm
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
     jetbrains.clion
+
+    # Tools
+    lazygit
     postman
     apostrophe
-    neofetch
+
+    # Languages
+    # jdk17
+    # maven
+
+    # cargo
+    # rustc
+    # rustfmt
   ];
 }

@@ -9,8 +9,8 @@
   hardware.opengl.enable = true;
 
   environment.systemPackages = with pkgs; [
-    exa
-    bat
+    evolutions
+    evolution-ews
     scrcpy
     bitwarden
     wasabiwallet
@@ -24,6 +24,8 @@
     gparted
     libreoffice
     celluloid
+    # file-roller
+    # geary
   ];
 
 }
