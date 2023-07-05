@@ -7,11 +7,20 @@
   };
 
   environment.systemPackages = with pkgs; [
-    discord
-    bottles
-    heroic
+    # Games
     minecraft
+
+    # Launcher
+    heroic
+
+    # Wine
+    bottles
+
+    # Emulator
     desmume
     ryujinx
+
+    # Communication
+    discord
   ];
 }

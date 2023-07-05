@@ -27,8 +27,8 @@ in
   };
   
   environment.systemPackages = with pkgs; [
-    wget
     update
+    wget
     htop
   ];
 }

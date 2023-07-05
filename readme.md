@@ -55,5 +55,4 @@ fileSystems."/" =
 
 ## TODO
 
-- arkenfox
 - gpg and ssh keys

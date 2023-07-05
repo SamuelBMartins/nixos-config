@@ -14,8 +14,9 @@
     plex-mpv-shim 
     plex-media-player
     jellyfin-web
+    celluloid
     spotify
     freetube
-    celluloid
+    # ffmpeg
   ];
 }
