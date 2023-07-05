@@ -32,7 +32,10 @@
               ];
             };
             
-            home-manager.extraSpecialArgs = { userConfig = systemConfig.user.config; };
+            home-manager.extraSpecialArgs = { 
+              userConfig = systemConfig.user.config;
+              systemConfig = self;
+            };
           }
         ] ++ systemConfig.modules;
 
