@@ -21,4 +21,5 @@ mount -t btrfs -o subvol=@home /dev/mapper/nixos /mnt/home &&\
 mount -t btrfs -o noatime,subvol=@swap /dev/mapper/nixos /mnt/swap &&\
 mount -t btrfs -o noatime,subvol=@nix /dev/mapper/nixos /mnt/nix &&\
 swapon /mnt/swap/swapfile &&\
+mkdir /mnt/boot &&\
 mount /dev/"$1"1 /mnt/boot
