@@ -1,6 +1,6 @@
-{ config, pkgs, userConfig, ... }:
+{ config, pkgs, lib, userConfig, ... }:
 let
-  autostart = userConfig.autostart ? [ ];
+  autostart = userConfig.autostart or [ ];
 in
 {
   home.username = "smartins";
@@ -21,7 +21,7 @@ in
   map (x: 
   
   home.file.".config/autostart/${x}.desktop".source 
-  = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/applications/${x}.desktop";
+    = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/applications/${x}.desktop";
   
   ) autostart
 

@@ -1,6 +1,6 @@
 { config, pkgs, userConfig, ... }:
 let
-  work = userConfig.work ? false;
+  work = userConfig.work or false;
 in
 {
   programs.git = {
