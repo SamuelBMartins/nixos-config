@@ -13,7 +13,6 @@
     evolution-ews
     scrcpy
     bitwarden
-    wasabiwallet
     ungoogled-chromium
     filezilla
     qbittorrent
@@ -23,6 +22,8 @@
     synology-drive-client
     libreoffice
     celluloid
+    # monero-gui
+    # wasabiwallet
     # gparted
     # file-roller
     # geary
