@@ -49,7 +49,7 @@ Add noatime option:
 fileSystems."/" =
     { device = "/dev/disk/by-uuid/f2ef73d8-bfd0-49ef-80c7-f470d86d1fc4";
       fsType = "btrfs";
-      options = [ "subvol=nixos" "noatime ];
+      options = [ "subvol=nixos" "noatime" ];
     };
 ```
 
