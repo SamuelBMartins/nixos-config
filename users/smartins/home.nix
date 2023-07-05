@@ -19,10 +19,8 @@ in
   ];
 
   map (x: 
-  
-  home.file.".config/autostart/${x}.desktop".source 
-    = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/applications/${x}.desktop";
-  
+    home.file.".config/autostart/${x}.desktop".source 
+      = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/applications/${x}.desktop";
   ) autostart
 
 }
