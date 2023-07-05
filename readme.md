@@ -59,3 +59,6 @@ fileSystems."/" =
 - email/calendar auth
 - wifi passwords and keychain
 - vpn
+- default apps
+- default app per file format
+- fill template folder 
