@@ -4,7 +4,6 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ../../modules/hardware/efi.nix
     ];
 
   networking.hostName = "qemu-kvm";

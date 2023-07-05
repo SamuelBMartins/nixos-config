@@ -1,7 +1,9 @@
-{ pkgs, ... }: 
+{ config, pkgs, lib, ... }: 
 let
   update = pkgs.writeShellScriptBin "update" ''
     nix flake update && sudo nixos-rebuild switch;
+  '' + 
+  optionalString config.services.flatpak.enable ''
     flatpak update -y; yes | flatpak remove --unused;
   '';
 in
@@ -25,10 +27,7 @@ in
   };
   
   environment.systemPackages = with pkgs; [
-    git
     wget
-    exa
-    bat
     update
     htop
   ];
