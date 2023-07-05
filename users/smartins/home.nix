@@ -13,14 +13,15 @@ in
   imports = [ 
     ./modules/core/git.nix
     ./modules/common/nvim.nix
+    ./modules/graphical/gnome.nix
+    ./modules/graphical/librewolf.nix
+    ./modules/media/mpv
+  ]; 
 
-    lib.mkIf config.services.xserver.desktopManager.gnome.enable ./modules/graphical/gnome.nix
-    lib.mkIf config.services.xserver.enable ./modules/media/mpv
-  ];
-
-  map (x: 
-    home.file.".config/autostart/${x}.desktop".source 
-      = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/applications/${x}.desktop";
-  ) autostart
+  home.file = with lib;
+    mkMerge (map (x: {
+      ".config/autostart/${x}.desktop".source 
+        = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/applications/${x}.desktop";
+    }) autostart);
 
 }

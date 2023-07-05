@@ -10,11 +10,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome = {
     enable = true;
-    # TODO find name package automatically
     extraGSettingsOverrides = ''
-      [org.gnome.shell]
-      favorite-apps=['librewolf.desktop', 'geary.desktop', 'calendar.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop']
-
       [org.gnome.desktop.peripherals.touchpad]
       tap-to-click=true
     '';
@@ -25,7 +21,6 @@
 
   # TODO
   # programs.gnupg.agent.enable = true;
-  # security.pam.services.gdm.enableGnomeKeyring = true;
 
   # plymouth also for password
   boot.initrd.systemd.enable = true;
@@ -52,7 +47,7 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
-    # TODO extensions tweaks boxes
+    # TODO tweaks boxes
   ];
 
   networking.networkmanager.enable = true;

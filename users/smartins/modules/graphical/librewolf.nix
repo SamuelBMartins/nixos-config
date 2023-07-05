@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, options, ... }:
 
 {
   programs.librewolf = {
     enable = true;
     
-    settings: {
+    settings = {
 
     };
   };

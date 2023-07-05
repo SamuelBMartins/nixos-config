@@ -9,7 +9,7 @@
   hardware.opengl.enable = true;
 
   environment.systemPackages = with pkgs; [
-    evolutions
+    evolution
     evolution-ews
     scrcpy
     bitwarden
@@ -25,8 +25,6 @@
     # monero-gui
     # wasabiwallet
     # gparted
-    # file-roller
-    # geary
   ];
 
 }

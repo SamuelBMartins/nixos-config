@@ -1,6 +1,3 @@
-let
-  version = "23.05";
-in
 {
   description = "Smarty's NixOS Flake";
 
@@ -9,9 +6,9 @@ in
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-${version}";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     home-manager = {
-      url = "github:nix-community/home-manager/release-${version}";
+      url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -33,11 +30,11 @@ in
               imports = [ 
                 (./. + "/users/${systemConfig.user.name}/home.nix") 
               ];
-
-              specialArgs = { userConfig = systemConfig.user.config };
             };
+            
+            home-manager.extraSpecialArgs = { userConfig = systemConfig.user.config; };
           }
-        ] ++ systemConfig.modules
+        ] ++ systemConfig.modules;
 
         specialArgs = { username = systemConfig.user.name; };
       };
@@ -54,8 +51,8 @@ in
               "us+altgr-intl"
               "ch+fr"
             ];
-          }
-        }
+          };
+        };
 
         modules = [
           ./hosts/qemu-kvm
@@ -84,8 +81,12 @@ in
             keyboardLayout = [
               "ch+fr"
             ];
-          }
-        }
+
+            autostart = [
+              "synology-drive"
+            ];
+          };
+        };
 
         modules = [
           ./hosts/asus-laptop
@@ -121,14 +122,14 @@ in
               "ch+fr"
             ];
             # TODO find name package automatically
-            autoStart = [
+            autostart = [
               "org.gnome.Calendar"
               "geary"
               "slack"
               "chromium"
             ];
-          }
-        }
+          };
+        };
 
         modules = [
           ./hosts/work
@@ -155,11 +156,11 @@ in
             keyboardLayout = [
               "us+altgr-intl"
             ];
-            autoStart = [
+            autostart = [
               "discord"
             ];
-          }
-        }
+          };
+        };
 
         modules = [
           ./hosts/dektop
@@ -190,8 +191,8 @@ in
             keyboardLayout = [
               "us+altgr-intl"
             ];
-          }
-        }
+          };
+        };
 
         modules = [
           ./hosts/thinkpad
@@ -220,8 +221,8 @@ in
             keyboardLayout = [
               "us+altgr-intl"
             ];
-          }
-        }
+          };
+        };
 
         modules = [
           ./hosts/raspberry

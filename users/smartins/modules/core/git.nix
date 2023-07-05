@@ -7,10 +7,13 @@ in
     enable = true;
     userName = "Samuel Martins";
     userEmail = if work 
-      then "s@smartins.ch" 
-      else "samuel.debabomartins@supsi.ch";
+      then "samuel.debabomartins@supsi.ch"
+      else "s@smartins.ch" ;
     signing.key = null; # GPG decides appropriate key to use based on email
     signing.signByDefault = true;
+    extraConfig = {
+      pull.rebase = true;
+    };
   };
 
   # activation = {

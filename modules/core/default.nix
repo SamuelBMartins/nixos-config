@@ -3,7 +3,7 @@ let
   update = pkgs.writeShellScriptBin "update" ''
     nix flake update && sudo nixos-rebuild switch;
   '' + 
-  optionalString config.services.flatpak.enable ''
+  lib.optionalString config.services.flatpak.enable ''
     flatpak update -y; yes | flatpak remove --unused;
   '';
 in
@@ -30,10 +30,8 @@ in
     update
     wget
     htop
-    # tree
-    # unzip
-    # curl
-    # file
-    # man-pages
+    tree
+    unzip
+    file
   ];
 }
