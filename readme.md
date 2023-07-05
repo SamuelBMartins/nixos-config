@@ -58,3 +58,4 @@ fileSystems."/" =
 - gpg and ssh keys with agenix
 - email/calendar auth
 - wifi passwords and keychain
+- vpn
