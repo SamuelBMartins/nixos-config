@@ -2,8 +2,22 @@
 
 let
   mkTuple = lib.hm.gvariant.mkTuple;
+  work = userConfig.work or false;
 in
 lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
+
+  xdg.mimeApps = {
+    enable = true;
+    associations.added = {
+      "application/pdf" = [ "org.gnome.Evince.desktop" ];
+      "application/vnd.oasis.opendocument.text" = [ "writer.desktop" ];
+    };
+    defaultApplications = {
+      "application/pdf" = [ "org.gnome.Evince.desktop" ];
+      "application/vnd.oasis.opendocument.text" = [ "writer.desktop" ];
+    };
+  };
+
   # TODO name packages auto
   dconf.settings = lib.mkMerge [
     {
@@ -21,14 +35,36 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
           "org.gnome.Console.desktop"
         ];
       };
+      "org/gnome/desktop/interface" = {
+        gtk-enable-primary-paste = false;
+      };
+      "org/gnome/mutter" = {
+        dynamic-workspaces = true;
+        edge-tiling = true;
+      };
+      "org/gnome/shell/app-switcher" = {
+        current-workspace-only = true;
+      };
     }
 
-    (lib.mkIf (wall ? userConfig) {
+    (lib.mkIf (userConfig ? wall) {
     "org/gnome/desktop/background" = {
         picture-uri = "${userConfig.wall}";
       };
     })
   ];
 
-  home.file.".face".source = ../../assets/icon.png;
+  home.file = lib.mkMerge [
+    {
+      "Templates/text.txt".text = "";
+      "Templates/writer.odt".source = ../../assets/templates/writer.odt;
+      "Templates/calc.ods".source = ../../assets/templates/calc.ods;
+      "Templates/impress.odp".source = ../../assets/templates/impress.odp;
+      "Templates/draw.odg".source = ../../assets/templates/draw.odg;
+    }
+    (lib.mkIf (!work) {
+      ".face".source = ../../assets/icon.png;
+    })
+  ];
+  
 }

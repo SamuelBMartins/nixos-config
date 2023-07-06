@@ -17,6 +17,9 @@
     apostrophe
     # meld
 
+    # CLI
+    awscli2
+
     # Languages
     # jdk17
     # maven

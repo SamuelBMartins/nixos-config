@@ -19,9 +19,6 @@
     ]; 
   };
 
-  # TODO
-  # programs.gnupg.agent.enable = true;
-
   # plymouth also for password
   boot.initrd.systemd.enable = true;
   boot.plymouth.enable = true;
@@ -33,17 +30,6 @@
     epiphany
     yelp
   ]);
-  
-  environment.sessionVariables = rec {
-    XDG_CACHE_HOME  = "\${HOME}/.cache";
-    XDG_CONFIG_HOME = "\${HOME}/.config";
-    XDG_BIN_HOME    = "\${HOME}/.local/bin";
-    XDG_DATA_HOME   = "\${HOME}/.local/share";
-
-    PATH = [ 
-      "\${XDG_BIN_HOME}"
-    ];
-  };
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator

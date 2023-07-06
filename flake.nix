@@ -121,8 +121,8 @@
 
         user = {
           name = "smartins";
-          work = true;
           config = {
+            work = true;
             keyboardLayout = [
               "gb"
               "ch+fr"
@@ -130,9 +130,9 @@
             # TODO find name package automatically
             autostart = [
               "org.gnome.Calendar"
-              "geary"
+              "org.gnome.Geary"
               "slack"
-              "chromium"
+              "teams"
             ];
           };
         };
@@ -142,6 +142,7 @@
 
           # HW
           ./modules/hardware/efi.nix
+          ./modules/hardware/tpm2.nix
 
           # DE 
           ./modules/graphical/gnome.nix
