@@ -10,6 +10,7 @@
   services.flatpak.enable = true;
   hardware.opengl.enable = true;
 
+  # printers
   services.printing.enable = true;
   services.printing.drivers = [ 
     pkgs.gutenprint
@@ -19,6 +20,9 @@
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
   services.avahi.openFirewall = true;
+
+  # Network
+  environment.etc."NetworkManager/system-connections/VPN-SUPSI.nmconnection".source = ../../assets/network/vpn/SUPSI.nmconnection;
 
   environment.systemPackages = with pkgs; [
     evolution

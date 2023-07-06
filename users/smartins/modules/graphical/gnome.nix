@@ -11,10 +11,12 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
     associations.added = {
       "application/pdf" = [ "org.gnome.Evince.desktop" ];
       "application/vnd.oasis.opendocument.text" = [ "writer.desktop" ];
+      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
     };
     defaultApplications = {
       "application/pdf" = [ "org.gnome.Evince.desktop" ];
       "application/vnd.oasis.opendocument.text" = [ "writer.desktop" ];
+      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
     };
   };
 
@@ -57,13 +59,13 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
   home.file = lib.mkMerge [
     {
       "Templates/text.txt".text = "";
-      "Templates/writer.odt".source = ../../assets/templates/writer.odt;
-      "Templates/calc.ods".source = ../../assets/templates/calc.ods;
-      "Templates/impress.odp".source = ../../assets/templates/impress.odp;
-      "Templates/draw.odg".source = ../../assets/templates/draw.odg;
+      "Templates/writer.odt".source = ../../../../assets/templates/writer.odt;
+      "Templates/calc.ods".source = ../../../../assets/templates/calc.ods;
+      "Templates/impress.odp".source = ../../../../assets/templates/impress.odp;
+      "Templates/draw.odg".source = ../../../../assets/templates/draw.odg;
     }
     (lib.mkIf (!work) {
-      ".face".source = ../../assets/icon.png;
+      ".face".source = ../../../../assets/icon.png;
     })
   ];
   

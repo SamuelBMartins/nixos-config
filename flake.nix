@@ -82,7 +82,7 @@
         user = {
           name = "smartins";
           config = {
-            wall = ./. + "/users/smartins/assets/walls/anime-wallpaper1.jpg";
+            wall = ./. + "assets/walls/anime-wallpaper1.jpg";
             keyboardLayout = [
               "ch+fr"
             ];
@@ -160,7 +160,7 @@
         user = {
           name = "smartins";
           config = {
-            wall = ./. + "/users/smartins/assets/walls/anime-wallpaper1.jpg";
+            wall = ./. + "assets/walls/anime-wallpaper1.jpg";
             keyboardLayout = [
               "us+altgr-intl"
             ];
@@ -196,7 +196,7 @@
         user = {
           name = "smartins";
           config = {
-            wall = ./. + "/users/smartins/assets/walls/anime-wallpaper1.jpg";
+            wall = ./. + "assets/walls/anime-wallpaper1.jpg";
             keyboardLayout = [
               "us+altgr-intl"
             ];
