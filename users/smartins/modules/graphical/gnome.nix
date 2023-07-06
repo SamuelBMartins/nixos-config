@@ -12,11 +12,17 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
       "application/pdf" = [ "org.gnome.Evince.desktop" ];
       "application/vnd.oasis.opendocument.text" = [ "writer.desktop" ];
       "text/plain" = [ "org.gnome.TextEditor.desktop" ];
+      "image/png" = [ "org.gnome.eog.desktop" ];
+      "image/jpeg" = [ "org.gnome.eog.desktop" ];
+      "image/gif" = [ "org.gnome.eog.desktop" ];
     };
     defaultApplications = {
       "application/pdf" = [ "org.gnome.Evince.desktop" ];
       "application/vnd.oasis.opendocument.text" = [ "writer.desktop" ];
       "text/plain" = [ "org.gnome.TextEditor.desktop" ];
+      "image/png" = [ "org.gnome.eog.desktop" ];
+      "image/jpeg" = [ "org.gnome.eog.desktop" ];
+      "image/gif" = [ "org.gnome.eog.desktop" ];
     };
   };
 

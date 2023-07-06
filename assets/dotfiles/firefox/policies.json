@@ -1,0 +1,18 @@
+{
+  "policies": {
+    "SearchEngines": {
+      "Default": "Brave",
+      "Add": [
+        {
+          "Name": "Brave",
+          "URLTemplate": "https://search.brave.com/search?q={searchTerms}",
+          "Method": "GET",
+          "Alias": "@br",
+          "Description": "Brave Search",
+          "IconURL": "https://cdn.search.brave.com/serp/v1/static/brand/eebf5f2ce06b0b0ee6bbd72d7e18621d4618b9663471d42463c692d019068072-brave-lion-favicon.png",
+          "SuggestURLTemplate": "https://search.brave.com/api/suggest?q={searchTerms}"
+        }
+      ]
+    }
+  }
+}

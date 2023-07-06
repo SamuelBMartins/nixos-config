@@ -57,8 +57,5 @@ fileSystems."/" =
 
 - gpg and ssh keys with agenix
 - email/calendar auth
-- wifi passwords and keychain
-- vpn
+- wifi passwords and keychain (copy crypted nmconnection file)
 - default apps
-- default app per file format
-- fill template folder 

@@ -21,8 +21,11 @@
   services.avahi.nssmdns = true;
   services.avahi.openFirewall = true;
 
-  # Network
-  environment.etc."NetworkManager/system-connections/VPN-SUPSI.nmconnection".source = ../../assets/network/vpn/SUPSI.nmconnection;
+  # Network - requires restart NetworkManager
+  environment.etc."NetworkManager/system-connections/VPN-SUPSI.nmconnection" = {
+    source = ../../assets/network/vpn/SUPSI.nmconnection;
+    mode = "0600";
+  };
 
   environment.systemPackages = with pkgs; [
     evolution
