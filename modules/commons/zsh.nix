@@ -2,9 +2,18 @@
 
   users.users.${username}.shell = pkgs.zsh;
 
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  fonts = {
+    fontconfig = {
+    defaultFonts = {
+      monospace = [ "Source Code Pro" ];
+    };
+  };
+
+    fonts = with pkgs; [
+      source-code-pro
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    ];
+  };
 
   programs.zsh = {
     enable = true;
