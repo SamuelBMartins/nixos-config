@@ -2,5 +2,6 @@ let
   user = builtins.readFile ../assets/ssh/personal.pub;
 in
 {
-  "secret1.age".publicKeys = [ user ];
+  "email_personal.age".publicKeys = [ user ];
+  "shh_personal.age".publicKeys = [ user ];
 }

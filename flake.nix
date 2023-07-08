@@ -50,6 +50,8 @@
         specialArgs = { 
           username = systemConfig.user.name;
           host = systemConfig.name;
+          system = systemConfig.system;
+          inputs = inputs;
         };
       };
 

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, host, ... }: 
+{ config, pkgs, lib, host, system, inputs, ... }: 
 let
   update = pkgs.writeShellScriptBin "update" ''
     nix flake update && sudo nixos-rebuild switch;
@@ -21,6 +21,8 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    inputs.agenix.packages."${system}".default
+
     update
     wget
     htop
