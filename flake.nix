@@ -76,7 +76,7 @@
         ];
       };
 
-      "asus-laptop" = system import ./hosts/asus-laptop/configuration.nix;
+      "asus-laptop" = system (import ./hosts/asus-laptop/configuration.nix);
 
       "work" = system {
         name = "work";
