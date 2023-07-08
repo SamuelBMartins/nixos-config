@@ -19,7 +19,7 @@
     };
   };
   
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, agenix, ... }:
   let
     system = systemConfig: nixpkgs.lib.nixosSystem {
         system = systemConfig.system;
