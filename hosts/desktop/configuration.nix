@@ -1,28 +1,27 @@
 {
-  name = "asus-laptop";
+  name = "desktop";
   system = "x86_64-linux";
 
   user = {
     name = "smartins";
     config = {
-      wall = ../../assets/walls/anime1.jpg;
+      wall = ../../assets/walls/hololive.jpg;
+
       keyboardLayout = [
-        "ch+fr"
+        "us+altgr-intl"
       ];
 
       autostart = [
-        "synology-drive"
+        "discord"
       ];
     };
   };
 
   modules = [
-    ./default.nix
-
     # HW
     ../../modules/hardware/efi.nix
-    ./nvidia-offload.nix
     ../../modules/hardware/tpm2.nix
+    ../../modules/hardware/nvidia.nix
 
     # DE 
     ../../modules/graphical/gnome.nix
@@ -33,4 +32,5 @@
     ../../modules/gaming
     ../../modules/work
   ];
+  
 }

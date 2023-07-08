@@ -1,27 +1,29 @@
 {
-  name = "asus-laptop";
+  name = "work";
   system = "x86_64-linux";
 
   user = {
     name = "smartins";
     config = {
-      wall = ../../assets/walls/anime1.jpg;
+      work = true;
       keyboardLayout = [
+        "gb"
         "ch+fr"
       ];
 
+      # TODO find name package automatically
       autostart = [
-        "synology-drive"
+        "org.gnome.Calendar"
+        "org.gnome.Geary"
+        "slack"
+        "teams"
       ];
     };
   };
 
   modules = [
-    ./default.nix
-
     # HW
     ../../modules/hardware/efi.nix
-    ./nvidia-offload.nix
     ../../modules/hardware/tpm2.nix
 
     # DE 
@@ -29,8 +31,6 @@
 
     # Categories
     ../../modules/dev
-    ../../modules/media
-    ../../modules/gaming
     ../../modules/work
   ];
 }
