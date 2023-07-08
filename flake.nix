@@ -45,14 +45,12 @@
         };
       };
 
-    systems = hosts: lib.mkMerge [ ] ++ map (x: { x = system (import ./hosts/${x}/configuration.nix) }) hosts;
+    systems = hosts: builtins.listToAttrs (map (x: {
+        name = x;
+        value = system (import ./hosts/${x}/configuration.nix);
+    }) hosts);
   in
   {
-    nixosConfigurations = systems [
-      "qemu-kvm"
-      "asus-laptop"
-      "work"
-      "desktop"
-    ];
+    nixosConfigurations = systems (builtins.attrNames (builtins.readDir ./hosts));
   };
 }
