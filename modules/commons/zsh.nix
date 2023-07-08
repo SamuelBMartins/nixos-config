@@ -4,10 +4,10 @@
 
   fonts = {
     fontconfig = {
-    defaultFonts = {
-      monospace = [ "Source Code Pro" ];
+      defaultFonts = {
+        monospace = [ "Source Code Pro" ];
+      };
     };
-  };
 
     fonts = with pkgs; [
       source-code-pro

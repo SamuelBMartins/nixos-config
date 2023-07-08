@@ -5,6 +5,9 @@ let
   '' + 
   lib.optionalString config.services.flatpak.enable ''
     flatpak update -y; yes | flatpak remove --unused;
+  '' + 
+  lib.optionalString config.services.fwupd.enable ''
+    fwupdmgr get-updates;
   '';
 in
 {
