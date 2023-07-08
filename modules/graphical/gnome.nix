@@ -35,11 +35,5 @@
     gnomeExtensions.appindicator
     # TODO tweaks boxes
   ];
-
-  networking.networkmanager.enable = true;
-  users.users.${username} = {
-    extraGroups = [ "networkmanager" ];
-  };
-
-  environment.etc."librewolf/policies/policies.json".source = ../../assets/dotfiles/firefox/policies.json;
+  
 }

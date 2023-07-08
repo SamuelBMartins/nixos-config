@@ -22,10 +22,17 @@
   services.avahi.openFirewall = true;
 
   # Network - requires restart NetworkManager
+  networking.networkmanager.enable = true;
+  users.users.${username} = {
+    extraGroups = [ "networkmanager" ];
+  };
+  
   environment.etc."NetworkManager/system-connections/VPN-SUPSI.nmconnection" = {
     source = ../../assets/network/vpn/SUPSI.nmconnection;
     mode = "0600";
   };
+
+  environment.etc."librewolf/policies/policies.json".source = ../../assets/dotfiles/firefox/policies.json;
 
   environment.systemPackages = with pkgs; [
     scrcpy
