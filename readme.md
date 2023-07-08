@@ -1,3 +1,8 @@
+## init
+```bash
+nixos-rebuild --flake .#mymachine
+```
+
 ## Update
 
 ```bash

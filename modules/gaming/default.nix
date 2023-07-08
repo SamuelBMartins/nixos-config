@@ -15,12 +15,19 @@
 
     # Wine
     bottles
+    # lutris
 
     # Emulator
     desmume
     ryujinx
+    citra-nightly
 
     # Communication
     discord
+
+    # Switch
+    fusee-interfacee-tk
+    
+    # Not found: edo pro, MultiMC, genshin launcher, NS-USBLoader
   ];
 }

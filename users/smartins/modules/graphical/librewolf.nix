@@ -15,15 +15,7 @@ lib.mkIf systemConfig.services.xserver.enable {
       # privacy.clearOnShutdown.sessions = false;
       "browser.toolbars.bookmarks.visibility" = "always";
       "browser.urlbar.update2.engineAliasRefresh" = true;
+      "webgl.disabled" = false;
     };
-#     extraPolicies = {
-#   "policies" = {
-#      "SearchEngines"=  {
-#       "Default"="Google";
-#       "PreventInstalls"= true;
-#     };
-#   };
-# };
-
   };
 }

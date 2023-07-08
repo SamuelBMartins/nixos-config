@@ -39,7 +39,10 @@
           }
         ] ++ systemConfig.modules;
 
-        specialArgs = { username = systemConfig.user.name; };
+        specialArgs = { 
+          username = systemConfig.user.name;
+          host = systemConfig.name;
+        };
       };
   in
   {
@@ -59,8 +62,6 @@
         };
 
         modules = [
-          ./hosts/qemu-kvm
-
           # HW
           ./modules/hardware/efi.nix
 
@@ -75,45 +76,7 @@
         ];
       };
 
-      "asus-laptop" = system {
-        name = "asus-laptop";
-        system = "x86_64-linux";
-
-        user = {
-          name = "smartins";
-          config = {
-            wall = ./. + "assets/walls/anime-wallpaper1.jpg";
-            keyboardLayout = [
-              "ch+fr"
-            ];
-
-            autostart = [
-              "synology-drive"
-            ];
-          };
-        };
-
-        modules = [
-          ./hosts/asus-laptop
-
-          # HW
-          ./modules/hardware/efi.nix
-          ./hosts/asus-laptop/nvidia-offload.nix
-          ./modules/hardware/tpm2.nix
-
-          # DE 
-          ./modules/graphical/gnome.nix
-
-          # Categories
-          ./modules/dev
-          ./modules/media
-          ./modules/gaming
-          ./modules/work
-
-          # Services
-          ./modules/ssh.nix
-        ];
-      };
+      "asus-laptop" = system import ./hosts/asus-laptop/configuration.nix;
 
       "work" = system {
         name = "work";
@@ -138,8 +101,6 @@
         };
 
         modules = [
-          ./hosts/work
-
           # HW
           ./modules/hardware/efi.nix
           ./modules/hardware/tpm2.nix
@@ -160,7 +121,7 @@
         user = {
           name = "smartins";
           config = {
-            wall = ./. + "assets/walls/anime-wallpaper1.jpg";
+            wall = ./. + "assets/walls/hololive.jpg";
             keyboardLayout = [
               "us+altgr-intl"
             ];
@@ -171,8 +132,6 @@
         };
 
         modules = [
-          ./hosts/dektop
-
           # HW
           ./modules/hardware/efi.nix
           ./modules/hardware/tpm2.nix
@@ -196,7 +155,7 @@
         user = {
           name = "smartins";
           config = {
-            wall = ./. + "assets/walls/anime-wallpaper1.jpg";
+            wall = ./. + "assets/walls/anime1.jpg";
             keyboardLayout = [
               "us+altgr-intl"
             ];
@@ -204,8 +163,6 @@
         };
 
         modules = [
-          ./hosts/thinkpad
-
           # HW
           ./modules/hardware/efi.nix
           ./modules/hardware/tpm2.nix
@@ -235,8 +192,6 @@
         };
 
         modules = [
-          ./hosts/raspberry
-
           # Categories
           ./modules/core
 

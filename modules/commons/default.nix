@@ -12,5 +12,7 @@
     bat
     neofetch
     xclip
+    # whois
+    # ntfs-3g
   ];
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: 
+{ config, pkgs, lib, host, ... }: 
 let
   update = pkgs.writeShellScriptBin "update" ''
     nix flake update && sudo nixos-rebuild switch;
@@ -8,6 +8,15 @@ let
   '';
 in
 {
+  imports =
+    [ 
+      ../../hosts/${host}/hardware-configuration.nix
+    ];
+
+  networking.hostName = host;
+  nixpkgs.config.allowUnfree = true;
+  system.stateVersion = "23.05";
+
   documentation.nixos.enable = false;
 
   time.timeZone = "Europe/Zurich";

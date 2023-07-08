@@ -28,8 +28,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    evolution
-    evolution-ews
     scrcpy
     bitwarden
     ungoogled-chromium
@@ -39,11 +37,22 @@
     gimp
     calibre
     synology-drive-client
-    libreoffice
     celluloid
+    element-desktop
+
+    # Office
+    libreoffice
+    pdfslicer
+    foliate
+    evolution
+    evolution-ews
+
     # monero-gui
     # wasabiwallet
     # gparted
+    # tigervnc
+    # komikku
+    # quasselClient
   ];
 
 }

@@ -10,6 +10,8 @@
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
     jetbrains.clion
+    # android-studio
+    # gnome-builder
 
     # Tools
     lazygit

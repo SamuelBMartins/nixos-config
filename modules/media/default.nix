@@ -18,5 +18,6 @@
     spotify
     freetube
     # ffmpeg
+    # spot
   ];
 }
