@@ -12,7 +12,6 @@ in
 
   imports = [ 
     ./modules/core/git.nix
-    ./modules/commons/email.nix
     ./modules/common/nvim.nix
     ./modules/graphical/gnome.nix
     ./modules/graphical/librewolf.nix
