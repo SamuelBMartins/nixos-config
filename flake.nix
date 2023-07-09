@@ -17,15 +17,18 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
   };
   
-  outputs = inputs@{ self, nixpkgs, home-manager, agenix, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, agenix, flatpaks, ... }:
   let
     system = systemConfig: nixpkgs.lib.nixosSystem {
         system = systemConfig.system;
 
         modules = [
           agenix.nixosModules.default
+          flatpaks.nixosModules.default
 
           (./. + "/users/${systemConfig.user.name}")
 
