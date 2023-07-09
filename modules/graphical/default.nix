@@ -9,9 +9,9 @@
 
   services.flatpak = {
     enable = true;
-    # remotes = {
-    #   "flathub" = "https://flathub.org/repo/flathub.flatpakrepo";
-    # };
+    remotes = {
+      "flathub" = "https://flathub.org/repo/flathub.flatpakrepo";
+    };
   };
   hardware.opengl.enable = true;
 

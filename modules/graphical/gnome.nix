@@ -19,6 +19,8 @@
     ]; 
   };
 
+  programs.xwayland.enable = true;
+
   # plymouth also for password
   boot.initrd.systemd.enable = true;
   boot.plymouth.enable = true;

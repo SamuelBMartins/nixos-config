@@ -16,6 +16,7 @@
     # Wine
     bottles
     # lutris
+    mangohud
 
     # Emulator
     desmume

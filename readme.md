@@ -61,6 +61,5 @@ fileSystems."/" =
 ## TODO
 
 - gpg and ssh keys with agenix
-- email/calendar auth
+- email/calendar auth gnome
 - wifi passwords and keychain (copy crypted nmconnection file)
-- default apps

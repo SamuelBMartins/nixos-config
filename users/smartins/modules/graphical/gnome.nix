@@ -53,6 +53,9 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
       "org/gnome/shell/app-switcher" = {
         current-workspace-only = true;
       };
+      "org/gnome/nautilus/icon-view" = {
+        default-zoom-level = "small-plus";
+      };
     }
 
     (lib.mkIf (userConfig ? wall) {

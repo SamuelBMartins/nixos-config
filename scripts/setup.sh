@@ -1,5 +1,6 @@
 #!/bin/sh
 cd ..
 mv /etc/nixos /etc/nixos-old
-chown -R 1000 *
 ln -s $(pwd) /etc/nixos
+chown -R 1000 /etc/nixos
+chown -R 1000 $(pwd)

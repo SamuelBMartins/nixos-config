@@ -18,6 +18,8 @@
   };
 
   modules = [
+    ./default.nix
+    
     # HW
     ../../modules/hardware/efi.nix
     ../../modules/hardware/tpm2.nix

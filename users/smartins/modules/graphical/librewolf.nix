@@ -7,15 +7,19 @@ lib.mkIf systemConfig.services.xserver.enable {
     # TODO look at arkenfox
     settings = {
       "identity.fxaccounts.enabled" = true;
+
       "clipboard.autocopy" = false;
       "middlemouse.paste" = false;
+      "general.autoScroll" = true;
+
       "privacy.clearOnShutdown.history" = false;
       "privacy.clearOnShutdown.cookies" = false;
-      "general.autoScroll" = true;
-      # privacy.clearOnShutdown.sessions = false;
+      "privacy.clearOnShutdown.sessions" = false;
+
+      "webgl.disabled" = false;
+
       "browser.toolbars.bookmarks.visibility" = "always";
       "browser.urlbar.update2.engineAliasRefresh" = true;
-      "webgl.disabled" = false;
     };
   };
 }
