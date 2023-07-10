@@ -20,6 +20,10 @@ in
   networking.hostName = host;
   nixpkgs.config.allowUnfree = true;
 
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   environment.systemPackages = with pkgs; [
     inputs.agenix.packages."${system}".default
 
