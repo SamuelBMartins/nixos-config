@@ -15,6 +15,7 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
       "image/png" = [ "org.gnome.eog.desktop" ];
       "image/jpeg" = [ "org.gnome.eog.desktop" ];
       "image/gif" = [ "org.gnome.eog.desktop" ];
+      "application/x-shellscript" = [ "org.gnome.TextEditor.desktop" ];
     };
     defaultApplications = {
       "application/pdf" = [ "org.gnome.Evince.desktop" ];
@@ -24,6 +25,7 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
       "image/jpeg" = [ "org.gnome.eog.desktop" ];
       "image/gif" = [ "org.gnome.eog.desktop" ];
       "x-scheme-handler/msteams" = [ "teams.desktop" ];
+      "application/x-shellscript" = [ "org.gnome.TextEditor.desktop" ];
     };
   };
 
