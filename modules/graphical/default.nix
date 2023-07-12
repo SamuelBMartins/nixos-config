@@ -6,7 +6,10 @@
   ];
 
   programs = {
-    gnupg.agent.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableExtraSocket = true;
+    };
 
     evolution = {
       enable = true;
