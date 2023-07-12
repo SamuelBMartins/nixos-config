@@ -1,4 +1,4 @@
-{ config, pkgs, userConfig, ... }:
+{ config, pkgs, lib, userConfig, ... }:
 let
   work = userConfig.work or false;
 in
@@ -13,9 +13,8 @@ in
     signing.signByDefault = true;
     extraConfig = {
       pull.rebase = true;
-      init = {
-        defaultBranch = "main";
-      };
+      init.defaultBranch = "master";
+      gpg.iniContent.program = lib.mkForce "gpg2"; # TODO not working use activation script
     };
   };
 
