@@ -21,6 +21,7 @@
 
     # CLI
     awscli2
+    xorg.xhost
 
     # Languages
     # jdk17
