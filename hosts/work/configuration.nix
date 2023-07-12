@@ -13,8 +13,7 @@
 
       # TODO find name package automatically
       autostart = [
-        "org.gnome.Calendar"
-        "org.gnome.Geary"
+        "org.gnome.Evolution"
         "slack"
         "teams"
       ];

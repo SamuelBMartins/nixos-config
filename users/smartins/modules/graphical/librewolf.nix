@@ -17,6 +17,7 @@ lib.mkIf systemConfig.services.xserver.enable {
       "privacy.clearOnShutdown.sessions" = false;
 
       "webgl.disabled" = false;
+      "privacy.resistFingerprinting" = false;
 
       "browser.toolbars.bookmarks.visibility" = "always";
       "browser.urlbar.update2.engineAliasRefresh" = true;

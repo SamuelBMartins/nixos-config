@@ -5,7 +5,14 @@
     ../audio.nix
   ];
 
-  programs.gnupg.agent.enable = true;
+  programs = {
+    gnupg.agent.enable = true;
+
+    evolution = {
+      enable = true;
+      plugins = [ pkgs.evolution-ews ];
+    };
+  };
 
   services.flatpak = {
     enable = true;
@@ -56,8 +63,6 @@
     libreoffice
     pdfslicer
     foliate
-    evolution
-    evolution-ews
 
     # monero-gui
     # wasabiwallet

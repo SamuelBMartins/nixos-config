@@ -23,6 +23,7 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
       "image/png" = [ "org.gnome.eog.desktop" ];
       "image/jpeg" = [ "org.gnome.eog.desktop" ];
       "image/gif" = [ "org.gnome.eog.desktop" ];
+      "x-scheme-handler/msteams" = [ "teams.desktop" ];
     };
   };
 
@@ -37,7 +38,7 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
         disabled-extensions = [];
         favorite-apps = [
           "librewolf.desktop"
-          "org.gnome.Geary.desktop"
+          "org.gnome.Evolution.desktop"
           "org.gnome.Calendar.desktop"
           "org.gnome.Nautilus.desktop"
           "org.gnome.Console.desktop"
