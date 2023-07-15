@@ -14,11 +14,18 @@ in
     extraConfig = {
       pull.rebase = true;
       init.defaultBranch = "master";
-      gpg.iniContent.program = lib.mkForce "gpg2"; # TODO not working use activation script
     };
+
+    includes = [
+      {
+        contents = {
+          gpg.program = "gpg2";
+        };
+      }
+    ];
   };
 
-  # activation = {
+  # home.activation = {
   #   importGpgKey = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
   #     $DRY_RUN_CMD ${lib.getExe pkgs.gnupg} --import ${
   #       privateDir + "/gpg.key"

@@ -1,14 +1,14 @@
-{ config, pkgs, lib, host, system, inputs, ... }: 
+{ config, pkgs, lib, host, system, ... }: 
 let
-  update = pkgs.writeShellScriptBin "update" ''
-    nix flake update && sudo nixos-rebuild switch;
+  update = pkgs.writeShellScriptBin "update" (''
+    sh -c "cd /etc/nixos && nix flake update" && sudo nixos-rebuild switch;
   '' + 
   lib.optionalString config.services.flatpak.enable ''
     flatpak update -y; yes | flatpak remove --unused;
   '' + 
   lib.optionalString config.services.fwupd.enable ''
     fwupdmgr get-updates;
-  '';
+  '');
 in
 {
   imports =
@@ -25,8 +25,6 @@ in
   '';
 
   environment.systemPackages = with pkgs; [
-    inputs.agenix.packages."${system}".default
-
     update
     wget
     htop

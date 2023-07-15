@@ -47,7 +47,7 @@
     mode = "0600";
   };
 
-  environment.etc."librewolf/policies/policies.json".source = ../../assets/dotfiles/firefox/policies.json;
+  environment.etc."librewolf/policies/policies.json".source = ../../assets/dotfiles/firefox/startpage.json;
 
   environment.systemPackages = with pkgs; [
     scrcpy

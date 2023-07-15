@@ -1,0 +1,18 @@
+{
+  "policies": {
+    "SearchEngines": {
+      "Default": "Startpage",
+      "Add": [
+        {
+          "Name": "Startpage",
+          "URLTemplate": "https://www.startpage.com/sp/search?query={searchTerms}&amp;cat=web&amp;pl=opensearch&amp;language=english",
+          "Method": "GET",
+          "Alias": "@sp",
+          "Description": "Startpage Search",
+          "IconURL": "https://www.startpage.com/assets/images/logo-16x16.png",
+          "SuggestURLTemplate": "https://www.startpage.com/suggestions?q={searchTerms}&amp;format=opensearch"
+        }
+      ]
+    }
+  }
+}

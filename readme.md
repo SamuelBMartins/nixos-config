@@ -63,5 +63,3 @@ fileSystems."/" =
 - gpg and ssh keys with agenix
 - email/calendar auth gnome (copy goa file)
 - wifi passwords and keychain (copy crypted nmconnection file)
-- gpg git activation script
-- xhost docker autostart script

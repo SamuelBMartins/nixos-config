@@ -13,6 +13,7 @@
 
       autostart = [
         "discord"
+        "synology-drive"
       ];
     };
   };
