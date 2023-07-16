@@ -5,6 +5,9 @@
     ../audio.nix
   ];
 
+  services.xserver.enable = true;
+  services.xserver.excludePackages = [ pkgs.xterm ];
+
   programs = {
     gnupg.agent = {
       enable = true;

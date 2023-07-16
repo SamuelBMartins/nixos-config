@@ -1,4 +1,4 @@
-{ config, pkgs, lib, username, ... }: 
+{ config, pkgs, lib, ... }: 
 
 let
   tpm2-update = pkgs.writeShellScriptBin "tpm2-update" ''

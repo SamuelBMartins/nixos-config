@@ -1,7 +1,5 @@
-{ config, pkgs, lib, userConfig, ... }:
-let
-  autostart = userConfig.autostart or [ ];
-in
+{ config, ... }:
+
 {
   home.username = "smartins";
   home.homeDirectory = "/home/smartins";
@@ -12,16 +10,15 @@ in
 
   imports = [ 
     ./modules/core/git.nix
+    ./modules/core/keys.nix
+
     ./modules/common/nvim.nix
+
+    ./modules/graphical/graphical.nix
     ./modules/graphical/gnome.nix
     ./modules/graphical/librewolf.nix
+
     ./modules/media/mpv
   ]; 
-
-  home.file = with lib;
-    mkMerge (map (x: {
-      ".config/autostart/${x}.desktop".source 
-        = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/applications/${x}.desktop";
-    }) autostart);
 
 }

@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 {
   users.users.smartins = {
     isNormalUser = true;

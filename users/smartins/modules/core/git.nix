@@ -1,4 +1,4 @@
-{ config, pkgs, lib, userConfig, ... }:
+{ config, lib, userConfig, ... }:
 let
   work = userConfig.work or false;
 in
@@ -16,20 +16,7 @@ in
       init.defaultBranch = "master";
     };
 
-    includes = [
-      {
-        contents = {
-          gpg.program = "gpg2";
-        };
-      }
-    ];
+    iniContent.gpg.program = lib.mkForce "gpg2";
   };
 
-  # home.activation = {
-  #   importGpgKey = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-  #     $DRY_RUN_CMD ${lib.getExe pkgs.gnupg} --import ${
-  #       privateDir + "/gpg.key"
-  #     }
-  #   '';
-  # };
 }

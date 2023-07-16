@@ -1,33 +1,10 @@
-{ config, lib, pkgs, userConfig, systemConfig, ... }:
+{ config, lib, userConfig, systemConfig, ... }:
 
 let
   mkTuple = lib.hm.gvariant.mkTuple;
   work = userConfig.work or false;
 in
 lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
-
-  xdg.mimeApps = {
-    enable = true;
-    associations.added = {
-      "application/pdf" = [ "org.gnome.Evince.desktop" ];
-      "application/vnd.oasis.opendocument.text" = [ "writer.desktop" ];
-      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
-      "image/png" = [ "org.gnome.eog.desktop" ];
-      "image/jpeg" = [ "org.gnome.eog.desktop" ];
-      "image/gif" = [ "org.gnome.eog.desktop" ];
-      "application/x-shellscript" = [ "org.gnome.TextEditor.desktop" ];
-    };
-    defaultApplications = {
-      "application/pdf" = [ "org.gnome.Evince.desktop" ];
-      "application/vnd.oasis.opendocument.text" = [ "writer.desktop" ];
-      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
-      "image/png" = [ "org.gnome.eog.desktop" ];
-      "image/jpeg" = [ "org.gnome.eog.desktop" ];
-      "image/gif" = [ "org.gnome.eog.desktop" ];
-      "x-scheme-handler/msteams" = [ "teams.desktop" ];
-      "application/x-shellscript" = [ "org.gnome.TextEditor.desktop" ];
-    };
-  };
 
   # TODO name packages auto
   dconf.settings = lib.mkMerge [
@@ -76,9 +53,16 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
       "Templates/impress.odp".source = ../../../../assets/templates/impress.odp;
       "Templates/draw.odg".source = ../../../../assets/templates/draw.odg;
     }
+    
+    # Profile pic
     (lib.mkIf (!work) {
       ".face".source = ../../../../assets/icon.png;
     })
+
+    # Email
+    {
+      ".config/goa-1.0/accounts.conf".source = ../../../../assets/dotfiles/goa/accounts.conf;
+    }
   ];
   
 }
