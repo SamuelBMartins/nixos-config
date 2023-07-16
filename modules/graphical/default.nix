@@ -45,9 +45,15 @@
     extraGroups = [ "networkmanager" ];
   };
   
-  environment.etc."NetworkManager/system-connections/VPN-SUPSI.nmconnection" = {
-    source = ../../assets/network/vpn/SUPSI.nmconnection;
-    mode = "0600";
+  environment.etc. = {
+    "NetworkManager/system-connections/VPN-SUPSI.nmconnection" = {
+      source = ../../assets/network/vpn/SUPSI.nmconnection;
+      mode = "0600";
+    };
+    "NetworkManager/system-connections/tpa-58640.nmconnection" = {
+      source = ../../secrets/network/tpa-58640.nmconnection;
+      mode = "0600";
+    };
   };
 
   environment.etc."librewolf/policies/policies.json".source = ../../assets/dotfiles/firefox/startpage.json;
