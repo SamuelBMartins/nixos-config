@@ -60,9 +60,9 @@ lib.mkIf systemConfig.services.xserver.desktopManager.gnome.enable {
     })
 
     # Email
-    {
-      ".config/goa-1.0/accounts.conf".source = ../../../../assets/dotfiles/goa/accounts.conf;
-    }
+    # {
+    #   ".config/goa-1.0/accounts.conf".source = ../../../../assets/dotfiles/goa/accounts.conf;
+    # }
   ];
   
 }

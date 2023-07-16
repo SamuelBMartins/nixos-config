@@ -8,6 +8,8 @@
       ${lib.getExe pkgs.xorg.xhost} +"local:docker@"
     '';
     wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
   };
 
   environment.systemPackages = with pkgs; [
