@@ -45,7 +45,7 @@
     extraGroups = [ "networkmanager" ];
   };
   
-  environment.etc. = {
+  environment.etc = {
     "NetworkManager/system-connections/VPN-SUPSI.nmconnection" = {
       source = ../../assets/network/vpn/SUPSI.nmconnection;
       mode = "0600";
