@@ -57,6 +57,3 @@ fileSystems."/" =
       options = [ "subvol=nixos" "noatime" ];
     };
 ```
-
-## TODO
-- wifi passwords and keychain (copy crypted nmconnection file)
