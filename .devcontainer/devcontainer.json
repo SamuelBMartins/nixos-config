@@ -3,15 +3,7 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-	"runArgs": [
-		// run container as current user
-		"--userns=keep-id"
-		// disable selinux isolation that breaks bind mounts
-		// "--security-opt=label=disable"
-	],
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
-	"workspaceFolder": "/workspace",
-	"containerUser": "vscode",
+
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -20,4 +12,5 @@
 			]
 		}
 	}
+
 }
